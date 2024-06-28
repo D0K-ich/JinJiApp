@@ -13,6 +13,7 @@
 
 import Model from "./model.vue";
 import {onMounted, ref} from "vue";
+import {CloseWebsocket, KanopyWS} from "../network/websocket";
 
 const ready           = ref<boolean>(false)
 const percent_loaded  = ref<number>(0)
@@ -24,7 +25,7 @@ const percent_loaded  = ref<number>(0)
 onMounted(() => {//TODO only for debug, wait ws
   setInterval(() => {
     percent_loaded.value += 10
-    if (percent_loaded.value >= 100) {ready.value = true}
+    if (percent_loaded.value >= 100) {ready.value = true; CloseWebsocket()}
   }, 1000)
 })
 

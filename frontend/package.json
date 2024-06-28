@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/debug": "^4.1.12",
+    "debug": "^4.3.5",
     "vue": "^3.2.37",
     "vue-videobg": "^2.0.0",
     "vuetify": "^3.6.10"
