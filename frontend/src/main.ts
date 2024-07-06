@@ -14,7 +14,7 @@ const dok_theme = {
     dark: true,
     colors: {
         background: '#120332',
-        surface: '#9370DBFF', //for fill components
+        surface: '#120332', //for fill components
         'surface-bright': '#9370DBFF',
         'surface-light': '#9370DBFF',
         'surface-variant': '#424242',
