@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import {Greet} from '../../wailsjs/go/main/App'
+import {Greet} from '../../../wailsjs/go/main/App'
 
 const data = ref<{name : string, resultText : string}>({
   name: "",
