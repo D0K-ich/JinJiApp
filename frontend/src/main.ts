@@ -24,12 +24,12 @@ const dok_theme = {
         secondary: '#48A9A6',
         'secondary-darken-1': '#018786',
         error: '#B00020',
-        info: '#2196F3',
+        // info: '#2196F3',
         success: '#4CAF50',
         warning: '#FB8C00',
     },
     variables: {
-        'border-color': '#000000',
+        'border-color': '#DB00FF',
         'border-opacity': 0.12,
         'high-emphasis-opacity': 0.87,
         'medium-emphasis-opacity': 0.60,
@@ -42,8 +42,8 @@ const dok_theme = {
         'pressed-opacity': 0.12,
         'dragged-opacity': 0.08,
         'theme-kbd': '#212529',
-        'theme-on-kbd': '#9370DBFF',
-        'theme-code': '#9370DBFF',
+        // 'theme-on-kbd': '#9370DBFF',
+        // 'theme-code': '#9370DBFF',
         'theme-on-code': '#000000',
     }
 }

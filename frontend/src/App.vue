@@ -1,11 +1,9 @@
-<template style="background-color: mediumpurple">
-  <div v-if="ready">
-    <navbar/>
-  </div>
+<template>
+  <v-app style="background: none">
+      <navbar v-if="ready"/>
+      <Preloader :percent_loaded="percent_loaded" v-if="!ready"/>
+  </v-app>
 
-  <div v-if="!ready">
-    <Preloader :percent_loaded="percent_loaded"/>
-  </div>
 </template>
 
 <script lang="ts" setup>
@@ -28,5 +26,18 @@ onMounted(() => {
 
 </script>
 
-<style>
+<style lang="scss">
+  html {
+    overflow: hidden!important;
+    background: linear-gradient(#000000, #310E37)
+  }
+
+  a {
+    color: #013a54;
+    text-decoration: none;
+    &:hover {
+      color: #0579a8;
+    }
+  }
+
 </style>
