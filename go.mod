@@ -1,4 +1,4 @@
-module KanopyApp
+module github.com/D0K-ich/JinJiApp
 
 go 1.21
 
