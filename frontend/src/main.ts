@@ -1,12 +1,14 @@
 import "vuetify/styles";
 import {createApp} from 'vue'
+import pinia from '../src/store/index'
 import App from './App.vue'
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 
 import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
-import "@fortawesome/fontawesome-free/css/all.css"; // Ensure your project is capable of handling css files
+import "@fortawesome/fontawesome-free/css/all.css";
+import {createPinia} from "pinia"; // Ensure your project is capable of handling css files
 
 const app = createApp(App)
 
@@ -63,4 +65,5 @@ const vuetify = createVuetify({
 });
 
 app.use(vuetify)
+app.use(pinia)
 app.mount("#app")
