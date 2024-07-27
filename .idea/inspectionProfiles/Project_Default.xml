@@ -56,25 +56,5 @@
     <inspection_tool class="GoUnitSpecificDurationSuffix" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="GoUnreachableCode" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GoUnsortedImport" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedCallResult" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedConst" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedExportedFunction" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedExportedType" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedFunction" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedGlobalVariable" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedParameter" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedType" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoUnusedTypeParameter" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVarAndConstTypeMayBeOmitted" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetAtomic" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetCopyLock" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetFailNowInNotTestGoroutine" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetImpossibleInterfaceToInterfaceAssertion" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetIntToStringConversion" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetLostCancel" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetStructTag" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetUnmarshal" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVetUnsafePointer" enabled="false" level="WARNING" enabled_by_default="false" />
-    <inspection_tool class="GoVulnerableCodeUsages" enabled="false" level="WARNING" enabled_by_default="false" />
   </profile>
 </component>
