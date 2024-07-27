@@ -15,6 +15,7 @@ import Navbar from "./views/navigation/navbar.vue";
 const percent_loaded  = ref<number>(0)
 const ready = ref<boolean>(false)
 
+
 onMounted(() => {
   CreateWebsocket("ws://localhost:8080/ws")
 
@@ -22,6 +23,8 @@ onMounted(() => {
     percent_loaded.value += Math.floor( Math.random() * 10)
     if (percent_loaded.value >= 100) {ready.value = true; CloseWebsocket()}
   }, 100)
+
+
 })
 
 </script>

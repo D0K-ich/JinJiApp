@@ -4,7 +4,7 @@
     <v-col cols="3">
       <div class="navbar justify-center" style="margin-left: 20%">
         <v-list style="background: none">
-          <v-list-item link title="ANIME" height="5" href="#" class="nav-el rounded-pill d-flex justify-center text-h5" style="margin-top: 48px; border: solid #DB00FF 2px;"/>
+          <v-list-item link @click="user_store.UserList" title="ANIME" height="5" href="#" class="nav-el rounded-pill d-flex justify-center text-h5" style="margin-top: 48px; border: solid #DB00FF 2px;"/>
           <v-list-item link title="MANGA" height="5" href="#" class="nav-el rounded-pill d-flex justify-center" style="margin-top: 48px; border: solid #DB00FF 2px;"/>
           <v-list-item link title="FILMS" height="5" href="#" class="nav-el rounded-pill d-flex justify-center" style="margin-top: 48px; border: solid #DB00FF 2px;"/>
           <v-list-item link title="FORUM" height="5" href="#" class="nav-el rounded-pill d-flex justify-center" style="margin-top: 48px; border: solid #DB00FF 2px;"/>
@@ -60,6 +60,9 @@
 
 
 <script setup lang="ts">
+import {UsersStore} from "../../store/user";
+
+const user_store = UsersStore()
 </script>
 
 <style scoped lang="scss">
