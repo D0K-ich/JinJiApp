@@ -69,7 +69,7 @@
 
 <script setup lang="ts">
 
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 const lvl = ref<number>(0)
 
@@ -88,9 +88,19 @@ const textAiChecked = () :string => {
 
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiAutorenew } from '@mdi/js';
+import {UsersStore} from "../../store/user";
 
 const isRotated = ref(false);
 
+const user_store = UsersStore()
+
+onMounted(() => {
+  user_store.UserList()
+      .then(() => {
+        nick.value = user_store.User.name
+        lvl.value = user_store.User.level
+      })
+})
 
 </script>
 

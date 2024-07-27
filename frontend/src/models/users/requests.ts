@@ -1,5 +1,5 @@
 enum Users {
-	List 			= "users/list",
+	Get 			= "get/by-name",
 	ChangeBalance 	= "users/change-balance",
 	Block	 		= "users/block",
 	Activate		= "users/activate",
