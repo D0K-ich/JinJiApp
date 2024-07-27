@@ -9,7 +9,11 @@
 </template>
 
 <script lang="ts" setup>
-=======
+
+import {onMounted, ref} from "vue";
+
+const percent_loaded  = ref<number>(0)
+const ready = ref<boolean>(false)
 
 onMounted(() => {
   CreateWebsocket("ws://localhost:8080/ws")
@@ -24,6 +28,7 @@ onMounted(() => {
 
 
 import MainPage from "./views/pages/MainPage.vue";
+import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
 </script>
 
 <style lang="scss">
