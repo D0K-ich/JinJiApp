@@ -19,8 +19,11 @@
         <v-btn  class="textAI"> {{textAiChecked()}} </v-btn>
 
 
-        <svg-icon @click="isRotated = !isRotated" :class="{'rotated': isRotated}"  type="mdi" :path="mdiAutorenew" class="krutilka"></svg-icon>
-
+        <svg
+            :width="100"
+            :height="100"
+            viewBox="0 0 24 24"
+            @click="isRotated = !isRotated" style="fill: currentColor;" :class="{'rotated': isRotated}"  type="mdi" class="krutilka"> <path :d="iconPath"></path></svg>
       </div>
 
     </levo>
@@ -120,7 +123,10 @@
 
 <script setup lang="ts">
 
-import {onMounted, ref} from "vue";
+import {onMounted, ref, computed} from "vue";
+import { mdiAutorenew } from '@mdi/js';
+import {UsersStore} from "../../store/user";
+import Diagram from "./diagram.vue";
 
 const lvl = ref<number>(0)
 
@@ -131,16 +137,12 @@ const achi = ref<number>(0)
 const nick = ref<string>('nickname')
 
 const is_checked = ref<boolean>(false)
+const iconPath = computed(() => mdiAutorenew);
 
 const textAiChecked = () :string => {
   if (!is_checked.value) {return 'Your AI selection'}
   return 'Our AI selection'
 }
-
-import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiAutorenew } from '@mdi/js';
-import {UsersStore} from "../../store/user";
-import Diagram from "./diagram.vue";
 
 const isRotated = ref(false);
 

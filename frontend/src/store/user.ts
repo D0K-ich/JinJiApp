@@ -60,3 +60,5 @@ export const UsersStore = defineStore('users', {
         },
     }
 })
+
+export {}
