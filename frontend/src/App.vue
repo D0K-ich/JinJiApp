@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: none">
+  <v-app class="main_styles">
 
     <main-page/>
 
@@ -32,5 +32,8 @@ import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
 </script>
 
 <style lang="scss">
-
+  .main_styles {
+    background: none;
+    ;
+  }
 </style>
