@@ -16,11 +16,14 @@
 
         </div>
 
-        <div  class="textAI"> {{textAiChecked()}} </div>
+        <v-btn  class="textAI"> {{textAiChecked()}} </v-btn>
 
 
-        <svg-icon @click="isRotated = !isRotated" :class="{'rotated': isRotated}"  type="mdi" :path="mdiAutorenew" class="krutilka"></svg-icon>
-
+        <svg
+            :width="100"
+            :height="100"
+            viewBox="0 0 24 24"
+            @click="isRotated = !isRotated" style="fill: currentColor;" :class="{'rotated': isRotated}"  type="mdi" class="krutilka"> <path :d="iconPath"></path></svg>
       </div>
 
     </levo>
@@ -33,9 +36,9 @@
 
         <div style="display: inline-block; width: 45%">
 
-          <div class="lvl d-flex align-content-end align-center justify-center mt-4 ml-4">lvl. {{lvl}}</div>
+          <v-btn class="lvl d-flex align-content-end align-center justify-center mt-4 ml-4">lvl. {{lvl}} </v-btn>
 
-          <div class="lvl d-flex align-content-end align-center justify-center ml-4" style="margin-top: 12%">sub. {{sub}}</div>
+          <v-btn class="lvl d-flex align-content-end align-center justify-center ml-4" style="margin-top: 12%">sub. {{sub}} </v-btn>
 
           <div style="display: inline-block" class="imag">
 
@@ -50,59 +53,63 @@
         </div>
       </div>
 
-      <div class="nick-class d-flex align-content-center align-center justify-center">{{ nick }}</div>
+      <div class="nick-class d-flex align-content-center align-center justify-center"> <a href="#" style=""> {{ nick }} </a> </div>
       <div class="line"/>
 
     </osnova>
 
-    <pravo style="display: inline-block; width: 45em; height: 36em; border: #cfd9df 3px solid"> </pravo>
+    <pravo style="display: inline-block; position: absolute; top: 1%; right: 5%; width: 35em; height: 35em; transform: rotate(90deg)">
 
-<levobottom style="display: inline-block; width: 50em; height: 20em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
+    <diagram/>
+
+    </pravo>
+
+<v-btn style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
 
   <div style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">
 
-    <div style="font-size: 40px; color: #cfd9df; position: absolute; top: 7%; left: 50%"> HEADER HEADER </div>
-    <div style="font-size: 30px; color: #cfd9df; position: absolute; top: 40%; left: 30%"> text text text text text text text text text text text text text text text text text text text text text text text text text text text  </div>
+    <div style="font-size: 35px; color: #cfd9df; position: absolute; top: 7%; left: 50%"> HEADER HEADER </div>
+    <div style="font-size: 20px; color: #cfd9df; position: absolute; top: 40%; left: 30%"> <p> text text text text text text text </p> <p> text text text text text text text </p> <p> text text text text text text text  </p> <p> text text text text text text text </p> <p> text text text text text text text </p>  </div>
     <v-img src="./src/views/pages/di.jpg"  style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>
 
   </div>
 
-</levobottom>
+</v-btn>
 
-<pumpneiro class="d-flex align-center" style="display: inline-block; width: 24em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
+<v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
 
   <v-img src="./src/views/pages/Djinneir.png"  style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
 
   <div  style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%" > DJIN </div>
 
 
-</pumpneiro>
+</v-btn>
 
-<pravobottom style="display: inline-block; width: 60em; height: 20em; position: absolute; top: 65%; left: 47%">
+<pravobottom style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
 
-  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+  <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
   <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> ANIME </div>
-  </div>
+  </v-btn>
 
-  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+  <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
     <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MANGA </div>
-  </div>
+  </v-btn>
 
-  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+  <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
     <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> FILMS </div>
-  </div>
+  </v-btn>
 
-  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+  <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
     <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> SETTINGS </div>
-  </div>
+  </v-btn>
 
-  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-    <div  style="font-size: 30px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> COLLECTIVE VIEWING </div>
-  </div>
+  <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+    <div  style="font-size: 25px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> COLLECTIVE VIEWING </div>
+  </v-btn>
 
-  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+  <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
     <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MY CHOICE </div>
-  </div>
+  </v-btn>
 
 
 
@@ -116,7 +123,10 @@
 
 <script setup lang="ts">
 
-import {onMounted, ref} from "vue";
+import {onMounted, ref, computed} from "vue";
+import { mdiAutorenew } from '@mdi/js';
+import {UsersStore} from "../../store/user";
+import Diagram from "./diagram.vue";
 
 const lvl = ref<number>(0)
 
@@ -127,19 +137,17 @@ const achi = ref<number>(0)
 const nick = ref<string>('nickname')
 
 const is_checked = ref<boolean>(false)
+const iconPath = computed(() => mdiAutorenew);
 
 const textAiChecked = () :string => {
   if (!is_checked.value) {return 'Your AI selection'}
   return 'Our AI selection'
 }
 
-import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiAutorenew } from '@mdi/js';
-import {UsersStore} from "../../store/user";
-
 const isRotated = ref(false);
 
 const user_store = UsersStore()
+
 
 onMounted(() => {
   user_store.UserList()
@@ -148,6 +156,8 @@ onMounted(() => {
         lvl.value = user_store.User.level
       })
 })
+
+
 
 </script>
 
@@ -176,6 +186,15 @@ onMounted(() => {
 
  }
 
+ .nick-class a {
+   color: #cfd9df;
+   text-decoration: none;
+ }
+
+ .nick-class a:hover {
+   color: #d700ff;
+ }
+
  .line {
    height: 3px;
    width: 80%;
@@ -191,10 +210,11 @@ onMounted(() => {
  }
 
  .lvl {
+   background: none;
    border: #DB00FF 3px solid;
    border-radius: 30px;
-   height: 20%;
-   width: 85%;
+   height: 16em;
+   width: 20em;
    color: #dfdfdf;
    font-family: 'Inria Sans', sans-serif;
    font-size: 30px;
@@ -275,17 +295,18 @@ onMounted(() => {
  }
 
  .textAI {
+   background: none;
    border: #DB00FF 3px solid;
    border-radius: 30px;
-   width: 40%;
-   height: 10%;
+   width: 11em;
+   height: 20em;
    text-align: center;
    display: inline-block;
    position: absolute;
    top: 10%;
    left: 20%;
    font-family: 'Inria Sans', sans-serif;
-   font-size: 30px
+   font-size: 25px
  }
 
  .rotated {
@@ -303,6 +324,7 @@ onMounted(() => {
    width: 13%;
    height: 13%
  }
+
 
 </style>
 
