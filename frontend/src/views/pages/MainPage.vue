@@ -69,8 +69,11 @@
 
 </levobottom>
 
-<pumpneiro style="display: inline-block; width: 24em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
+<pumpneiro class="d-flex align-center" style="display: inline-block; width: 24em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
 
+  <v-img src="./src/views/pages/Djinneir.png"  style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
+
+  <div  style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%" > DJIN </div>
 
 
 </pumpneiro>
