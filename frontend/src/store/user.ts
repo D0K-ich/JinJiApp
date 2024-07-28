@@ -5,38 +5,52 @@ import network from "../network/network";
 import {UserInfoResponse} from "../models/users/responses";
 
 interface State {
-    // transactions		: Transaction[]
-    filter_transactions : string
-
-    user				: User
-
-    // tariffs				: Tariff[]
-
-    // promocodes			: Promocode[]
+    User: User
 }
 
 export const UsersStore = defineStore('users', {
     state: (): State => ({
-        // transactions: [],
-        filter_transactions: "",
-
-        user: <User>{},
-
-        // tariffs: [],
-
-        // promocodes: [],
+        User: <User>{},
     }),
 
-    getters : {
+    actions : {
         UserList() {
             return new Promise((resolve, reject) => {
-                network.BillingPost<UserInfoResponse>(Endpoints.Billing.List, {})
+                network.BillingPost<UserInfoResponse>(Endpoints.Users.Get, {
+                    "_module" : "profile",
+                    "_subject": "profile",
+                    "_action": "get",
+                    "name" : "name"
+                })
                     .then((r) => {
                         if (r.user != null) {
-                            this.user = r.user
+                            this.User = r.user
                             return resolve(r)
                         }
-                        this.user = <User>{}
+                        this.User = <User>{}
+                        resolve(r)
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
+
+
+        UpdateUser() {
+            return new Promise((resolve, reject) => {
+                network.BillingPost<UserInfoResponse>(Endpoints.Users.Get, {
+                    "_module" : "profile",
+                    "_subject": "profile",
+                    "_action": "get",
+                    "name" : "name"
+                })
+                    .then((r) => {
+                        if (r.user != null) {
+                            this.User = r.user
+                            return resolve(r)
+                        }
+                        this.User = <User>{}
                         resolve(r)
                     })
                     .catch((err) => {

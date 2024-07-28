@@ -1,7 +1,7 @@
 <template >
   <fon class="grddd d-flex" style="height: 100%; width: 100%">
 
-    <levo style="display: inline-block; width: 40em; height: 30em; position: relative">
+    <levo style="display: inline-block; width: 40em; height: 36em; position: relative;">
 
       <div class="d-flex" style="width: 100%; height: 100%">
         <div class="hohline"/>
@@ -22,8 +22,6 @@
         <svg-icon @click="isRotated = !isRotated" :class="{'rotated': isRotated}"  type="mdi" :path="mdiAutorenew" class="krutilka"></svg-icon>
 
       </div>
-
-
 
     </levo>
 
@@ -57,10 +55,56 @@
 
     </osnova>
 
-    <pravo style="display: inline-block; width: 45em; height: 30em; border: #cfd9df 3px solid">
+    <pravo style="display: inline-block; width: 45em; height: 36em; border: #cfd9df 3px solid"> </pravo>
+
+<levobottom style="display: inline-block; width: 50em; height: 20em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
+
+  <div style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">
+
+    <div style="font-size: 40px; color: #cfd9df; position: absolute; top: 7%; left: 50%"> HEADER HEADER </div>
+    <div style="font-size: 30px; color: #cfd9df; position: absolute; top: 40%; left: 30%"> text text text text text text text text text text text text text text text text text text text text text text text text text text text  </div>
+    <v-img src="./src/views/pages/di.jpg"  style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>
+
+  </div>
+
+</levobottom>
+
+<pumpneiro style="display: inline-block; width: 24em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
 
 
-    </pravo>
+
+</pumpneiro>
+
+<pravobottom style="display: inline-block; width: 60em; height: 20em; position: absolute; top: 65%; left: 47%">
+
+  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+  <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> ANIME </div>
+  </div>
+
+  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+    <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MANGA </div>
+  </div>
+
+  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+    <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> FILMS </div>
+  </div>
+
+  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+    <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> SETTINGS </div>
+  </div>
+
+  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+    <div  style="font-size: 30px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> COLLECTIVE VIEWING </div>
+  </div>
+
+  <div class="d-flex justify-center align-center" style="display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+    <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MY CHOICE </div>
+  </div>
+
+
+
+
+</pravobottom>
 
 
   </fon>
@@ -69,7 +113,7 @@
 
 <script setup lang="ts">
 
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 
 const lvl = ref<number>(0)
 
@@ -88,9 +132,19 @@ const textAiChecked = () :string => {
 
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiAutorenew } from '@mdi/js';
+import {UsersStore} from "../../store/user";
 
 const isRotated = ref(false);
 
+const user_store = UsersStore()
+
+onMounted(() => {
+  user_store.UserList()
+      .then(() => {
+        nick.value = user_store.User.name
+        lvl.value = user_store.User.level
+      })
+})
 
 </script>
 
@@ -113,7 +167,7 @@ const isRotated = ref(false);
    font-size: 50px;
    text-align: center;
    width: 100%;
-   margin-top: 5%;
+   margin-top: 2%;
    color: #dfdfdf;
    font-family: 'Inria Sans', sans-serif;
 
@@ -241,7 +295,7 @@ const isRotated = ref(false);
    transition: transform 0.3s ease-in-out;
    display: inline-block;
    position: absolute;
-   top: 31%; right: 8%;
+   top: 31%; right: 6%;
    color: #DB00FF;
    width: 13%;
    height: 13%
