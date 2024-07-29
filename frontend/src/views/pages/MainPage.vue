@@ -18,7 +18,6 @@
 
         <v-btn  class="textAI"> {{textAiChecked()}} </v-btn>
 
-
         <svg-icon @click="isRotated = !isRotated" :class="{'rotated': isRotated}"  type="mdi" :path="mdiAutorenew" class="krutilka"></svg-icon>
 
       </div>
@@ -73,14 +72,18 @@
 
 </v-btn>
 
+
 <v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
 
   <v-img src="./src/views/pages/Djinneir.png"  style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
+
 
   <div  style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%" > DJIN </div>
 
 
 </v-btn>
+
+
 
 <pravobottom style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
 
@@ -211,7 +214,7 @@ onMounted(() => {
    background: none;
    border: #DB00FF 3px solid;
    border-radius: 30px;
-   height: 16em;
+   height: 2em;
    width: 20em;
    color: #dfdfdf;
    font-family: 'Inria Sans', sans-serif;
@@ -297,7 +300,7 @@ onMounted(() => {
    border: #DB00FF 3px solid;
    border-radius: 30px;
    width: 11em;
-   height: 20em;
+   height: 2em;
    text-align: center;
    display: inline-block;
    position: absolute;
