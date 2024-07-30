@@ -27,6 +27,7 @@ onMounted(() => {
 })
 
 
+
 import MainPage from "./views/pages/MainPage.vue";
 import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
 </script>
