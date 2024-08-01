@@ -3,6 +3,7 @@ enum Users {
 	ChangeBalance 	= "users/change-balance",
 	Block	 		= "users/block",
 	Activate		= "users/activate",
+	Nuemesage       = "messages/new"
 }
 
 enum Tariffs {
@@ -31,3 +32,4 @@ export const Endpoints = {
 	Promocodes,
 	Billing
 }
+

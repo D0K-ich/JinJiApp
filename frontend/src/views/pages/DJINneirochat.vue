@@ -1,106 +1,94 @@
-
 <template>
 
 
+	<fon class="grdd d-flex align-content-end align-center justify-center" style="height: 100%; width: 100%">
 
-  <fon class="grdd d-flex align-content-end align-center justify-center" style="height: 100%; width: 100%">
+		<v-row>
 
+			<v-col cols="1" class="d-flex justify-center" style="min-width: calc(30vh - 60px); margin-left: 1%">
 
-
-    <div style="height: 100%; width: 11%; position: absolute; top: 0; left: 1%">
-
-      <v-virtual-scroll
-          :height="990"
-          :width="220"
-          style="scrollbar-width: none"
-          :items="['1','2','3','4','1','2','3','4','1','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4']"
-      >
-        <template v-slot:default="{ item }">
-          <v-card
-              :height="110"
-              class="ma-4"
-              style="word-wrap: break-word; background-color: rgba(219, 0, 255, 1); border-radius: 30px">
-            <v-card-text class="ma-2" style="font-size: 20px; font-family: 'Inria Sans', sans-serif; color: black"> {{item}} </v-card-text>
-
-
-
-          </v-card>
-        </template>
-      </v-virtual-scroll>
-
-    </div>
+				<v-virtual-scroll
+					:width="220"
+					style="scrollbar-width: none; height: calc(100vh - 28px)"
+					:items="['1','2','3','4','1','2','3','4','1','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4']"
+				>
+					<template v-slot:default="{ item }">
+						<v-card
+							:height="110"
+							class="ma-4"
+							style="word-wrap: break-word; background-color: rgba(219, 0, 255, 1); border-radius: 30px">
+							<v-card-text class="ma-2"
+							             style="font-size: 20px; font-family: 'Inria Sans', sans-serif; color: black">
+								{{ item }}
+							</v-card-text>
 
 
-    <div class="centered-content" style=" position: absolute; background-color: #3A114D; width: 75%; height: 90%; border: rgba(219, 0, 255, 0.5) 2px solid ; border-radius: 30px; box-shadow: 0 0 15px rgba(219, 0, 255, 1)">
+						</v-card>
+					</template>
+				</v-virtual-scroll>
 
-      <v-text-field variant="solo"
-                    style="background-color: rgba(219, 0, 255, 0.5); width: 95%; height: 6%; position: absolute; bottom: 2%; left: 2.5%; border-radius: 30px" class="rounded-castom">
-
-        <v-img src="./src/views/pages/lapa.png"  style="width: 3%; height: 50%; display: inline-block; position: absolute; right: 1%"/>
-
-      </v-text-field>
-
-      <div>
-<!--        <vue-advanced-chat-->
-<!--            height="calc(100vh - 20px)"-->
-<!--            :current-user-id="currentUserId"-->
-<!--            :rooms="rooms"-->
-<!--            :rooms-loaded="roomsLoaded"-->
-<!--        />-->
-        <!--            :messages="JSON.stringify(messages)"-->
-        <!--            :messages-loaded="messagesLoaded"-->
-        <!--            @send-message="sendMessage($event.detail[0])"-->
-        <!--            @fetch-messages="fetchMessages($event.detail[0])"-->
-      </div>
+			</v-col>
 
 
+			<v-col cols="9"
+			       style=" background-color: #3A114D; margin-left: 1%; margin-top: 3%; height: calc(100vh - 67px); border: rgba(219, 0, 255, 0.5) 2px solid ; border-radius: 30px; box-shadow: 0 0 15px rgba(219, 0, 255, 1)">
+
+				<div
+					class="d-flex justify-center" style="font-size: 20px; font-family: 'Inria Sans', sans-serif; color: #cfd9df">
+					1 september 1941
+
+				</div>
+
+				<v-virtual-scroll :width="1500" :height="795" :items="messages">
+
+					<template class="d-flex" v-slot:default="{item}">
+
+						<div :class="item.sender == 'me' ? 'memeseng' : 'backmeseng' "> {{item.content}} </div>
+
+					</template>
+
+				</v-virtual-scroll>
+
+				<div class="d-flex" style="width: 100%">
+				<v-text-field v-model="user_message" variant="solo" bg-color="rgba(219, 0, 255, 0.5)" class="ml-15 cusron">
+
+					<template v-slot:append-inner>
+						<v-btn style="background: none;" @click="sendmesage">
+
+						<v-img src="./src/views/pages/lapa.png" :height="30" :width="30" />
+
+						</v-btn>
+					</template>
 
 
-<div style="position: absolute; top: 1%; font-size: 20px; font-family: 'Inria Sans', sans-serif; color: #cfd9df; left: 45%"> 1 september 1941 </div>
+					</v-text-field>
 
-    </div>
-
-
-    <v-img  @click="OfOnIc = !OfOnIc" src="./src/views/pages/Djinneir.png"  style="width: 10%; height: 10%; display: inline-block; position: absolute; right: 1%; bottom: 5%"/>
+					</div>
 
 
-    <iconBab  v-if="OfOnIc" >
-
-    <v-img src="./src/views/pages/nastroiki.png"  style="width: 5%; height: 4%; display: inline-block; position: absolute; right: 3.5%; bottom: 25%"/>
-
-
-    <v-img src="./src/views/pages/favourites.png"  style="width: 5%; height: 4%; display: inline-block; position: absolute; right: 3.5%; bottom: 35%"/>
-
-
-    <v-img src="./src/views/pages/stata.png"  style="width: 5%; height: 4%; display: inline-block; position: absolute; right: 3.5%; bottom: 45%"/>
-
-
-    <v-img src="./src/views/pages/poisk.png"  style="width: 5%; height: 4%; display: inline-block; position: absolute; right: 3.5%; bottom: 55%"/>
-
-
-    <v-img src="./src/views/pages/friends.png"  style="width: 4%; height: 4%; display: inline-block; position: absolute; right: 4%; bottom: 65%"/>
-
-
-    <v-img src="./src/views/pages/profil.png"  style="width: 5%; height: 4%; display: inline-block; position: absolute; right: 3.5%; bottom: 75%"/>
-
-
-      <router-link to="/">
-    <v-img src="./src/views/pages/home.png"  style="width: 5%; height: 4%; display: inline-block; position: absolute; right: 3.5%; bottom:85%"/>
-      </router-link>
-
-
-
-    </iconBab>
+			</v-col>
 
 
 
 
-  </fon>
+			<v-col cols="1"  style=" margin-left: 1%">
+				<router-link v-for="(image, idx) in imageg" :key="idx" :to="image.path" >
 
+					<v-img v-if="OfOnIc" :height="55" :width="55" class="mt-14 ml-9" :src="image.path_image"/>
+
+				</router-link>
+
+				<v-img @click="OfOnIc = !OfOnIc" class="mt-10" src="./src/views/pages/Djinneir.png"/>
+
+			</v-col>
+
+
+		</v-row>
+
+	</fon>
 
 
 </template>
-
 
 
 <script setup lang="ts">
@@ -108,37 +96,96 @@
 
 const OfOnIc = ref(true)
 
-import {register, Room, RoomUser, VueAdvancedChat} from 'vue-advanced-chat'
+import {register} from 'vue-advanced-chat'
+
 register()
-import { ref, onMounted } from 'vue';
+import {ref} from 'vue';
 
-const currentUserId = ref<number>(1);
-const rooms = ref<Room[]>(<Room[]>[]);
-const roomsLoaded = ref<boolean>(false);
+const imageg = ref<Image[]>([
+	{path: "/", path_image: './src/views/pages/nastroiki.png'},
+	{path: "/", path_image: './src/views/pages/favourites.png'},
+	{path: "/", path_image: './src/views/pages/stata.png'},
+	{path: "/", path_image: './src/views/pages/poisk.png'},
+	{path: "/", path_image: './src/views/pages/friends.png'},
+	{path: "/", path_image: './src/views/pages/profil.png'},
+	{path: "/", path_image: './src/views/pages/home.png'},
+])
 
-onMounted((): void => {
-  rooms.value = [
-    <Room>{roomName:"asd", roomId:"12"},
-  ];
-  roomsLoaded.value = true;
-});
+interface Image {
+	path: string
+	path_image: string
+}
+
+interface Message {
+	content: string
+	sender: string
+	time: number
+}
+
+const messages =ref<Message[]>([
+	{content: 'dsj.dkl', sender: "me", time: 1},
+	{content: 'vnjiklvhnilgvhjivhjgligjlsrikvgjsikdrgjuiedzfogjuiorkfjguierh`rohgierohgeerohgeiorhgoшвара щшв оашщвоашщ кщшгщшво ао а оащуыа вerohgeiorhgoшвара щшв оашщвоашщ кщшгщшво ао а оащуыа вerohgeiorhgoшвара щшв оашщвоашщ кщшгщшво ао а оащуыа вiorhgoшвара щшв оашщвоашщ кщшгщшво ао а оащуыа вшащшыуоагыуагы а воаыоаршгв швощшуо шрвщша вщшщыашвыаэшы шуагыща lirhgiergheiorhg', sender: "me", time: 1},
+	{content: 'dsj.dkl', sender: "djin", time: 1},
+	{content: 'dsj.dkl', sender: "me", time: 1},
+	{content: 'dsj.dkl', sender: "me", time: 1},
+	{content: 'dsj.dkl', sender: "me", time: 1},
+	{content: 'dsj.dkl', sender: "me", time: 1},
+])
+
+
+import { UsersStore } from '../../store/user';
+
+
+const mesangeDgin = ref('');
+const user_message = ref<string>('')
+const sendmesage = () => {
+	user_store.MessengNeiro(user_message.value)
+}
+
+const user_store = UsersStore()
+
+
 </script>
-
-
-
 
 
 <style scoped lang="scss">
 
 .grdd {
-  background: linear-gradient(167deg, #000000, 70%, #3A114D);
+	background: linear-gradient(167deg, #000000, 70%, #3A114D);
 }
 
-.rounded-castom * {
-  border-radius: 30px;
-  background: none;
+.cusron *{
+	border-radius: 30px;
 }
 
+.memeseng {
+	background-color: rgba(137, 121, 255, 0.6);
+	border-radius: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	min-width: calc(30vh - 250px);
+	max-width: 100vh;
+	width: fit-content;
+	min-height: calc(30vh - 250px);
+	max-height: 100vh;
+	height: fit-content;
+	padding: 10px;
+	box-sizing: border-box;
+}
 
+.backmeseng {
+	background-color: rgba(219, 0, 255, 0.6);
+	margin-bottom: 30px;
+	max-width: 40%;
+	border-radius: 30px;
+	min-width: calc(30vh - 250px);
+	max-width: 100vh;
+	width: fit-content;
+	min-height: calc(30vh - 250px);
+	max-height: 100vh;
+	height: fit-content;
+	padding: 10px;
+	box-sizing: border-box;
+}
 
 </style>
