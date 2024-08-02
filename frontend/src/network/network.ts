@@ -24,11 +24,6 @@ class Network {
 
     private setPostSpecFields(payload : Record<string, any>) : Record<string, any> {
         payload['_type']		= "request"
-        // payload['_uuid']		= uuidv4()
-        // payload['_client_uuid']	= self.clientUuid
-        // payload['_link_uuid'] 	= self.linkUuid
-        // payload['_subject']		= subject
-        // payload['_action']		= action
         return payload
     }
 
