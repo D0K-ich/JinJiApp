@@ -17,7 +17,7 @@ class Network {
         }
     })
 
-    BillingPost<T>(path : string, payload : Record<string, any>, timeout? : number) {
+    UserPost<T>(path : string, payload : Record<string, any>, timeout? : number) {
         const parts : string[] = path.split('/')
         return this.adminPost<T>('user', parts[0], parts.length > 1 ? parts[1] : '', payload, timeout)
     }
@@ -37,9 +37,6 @@ class Network {
         const r_conf : AxiosRequestConfig = {timeout : timeout || 30000, withCredentials: true}
         return new Promise<T>((resolve, reject) => {
             payload = self.setPostSpecFields(payload)
-            payload['_module']		= "user"
-            payload['_subject']		= "messages"
-            payload['_action']		= "new"
             payload['_access_token']= "" //TODO
             self.adminApi.post([module, subject, action].join("/"), payload, r_conf)
                 .then((res : AxiosResponse<T>) => {resolve(res.data)})

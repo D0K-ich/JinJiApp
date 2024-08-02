@@ -135,7 +135,7 @@
 import {onMounted, ref, computed} from "vue";
 import { mdiAutorenew } from '@mdi/js';
 import {UsersStore} from "../../store/user";
-import Diagram from "./diagram.vue";
+import Diagram from "./Diagram.vue";
 
 const lvl = ref<number>(0)
 
@@ -317,7 +317,6 @@ onMounted(() => {
 
  .rotated {
    transform: rotate(180deg);
-
  }
 
  .krutilka {
