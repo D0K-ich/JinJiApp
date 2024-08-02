@@ -40,9 +40,7 @@
 
 				<v-btn class="lvl" style="position: absolute; top: 17%; right: 0">sub. {{ sub }}</v-btn>
 
-
-				<v-img src="./src/views/pages/goblet.png" height="100" width="100" class="goblet"
-				       style="position: absolute; top: 35%; right: 34%"/>
+				<v-img src="./src/views/pages/imgs/goblet.png" height="100" width="100" class="goblet" style="position: absolute; top: 35%; right: 34%"/>
 
 				<div class="achievements">{{ achi }}</div>
 
@@ -50,19 +48,13 @@
 
 				<div class="line"/>
 
-
 				<router-link to="/neirochat">
-					<v-btn class="d-flex align-center"
-					       style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%; border: #DB00FF 3px solid; border-radius: 30px">
+					<v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%; border: #DB00FF 3px solid; border-radius: 30px">
 
-						<v-img src="./src/views/pages/imgs/Djinneir.png"
-						       style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
+						<v-img src="./src/views/pages/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
 
 
-						<div
-							style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%">
-							DJIN
-						</div>
+						<div style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%">DJIN</div>
 
 					</v-btn>
 				</router-link>
@@ -75,59 +67,48 @@
 
 			</v-col>
 
-			<v-btn
-				style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
+			<v-btn  style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
 
-				<div
-					style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">
+				<div style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">
 
-					<div style="font-size: 35px; color: #cfd9df; position: absolute; top: 7%; left: 50%"> HEADER
-						HEADER
-					</div>
-					<div style="font-size: 20px; color: #cfd9df; position: absolute; top: 40%; left: 30%"><p> text text
-						text text text text text </p>
+					<div style="font-size: 35px; color: #cfd9df; position: absolute; top: 7%; left: 50%"> HEADER HEADER	</div>
+					<div style="font-size: 20px; color: #cfd9df; position: absolute; top: 40%; left: 30%">
+						<p> text text text text text text text </p>
 						<p> text text text text text text text </p>
 						<p> text text text text text text text </p>
 						<p> text text text text text text text </p>
 						<p> text text text text text text text </p></div>
-					<v-img src="./src/views/pages/di.jpg"
-					       style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>
+					<v-img src="./src/views/pages/imgs/di.jpg" style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>
 
 				</div>
 			</v-btn>
 
 			<v-col style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
 
-				<v-btn class="d-flex justify-center align-center"
-				       style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
 					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> ANIME</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center"
-				       style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
 					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MANGA</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center"
-				       style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
 					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> FILMS</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center"
-				       style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
 					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> SETTINGS
 					</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center"
-				       style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
 					<div style="font-size: 25px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> COLLECTIVE
 						VIEWING
 					</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center"
-				       style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
 					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MY CHOICE
 					</div>
 				</v-btn>
