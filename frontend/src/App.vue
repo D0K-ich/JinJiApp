@@ -1,7 +1,7 @@
 <template>
   <v-app class="main_styles">
-
-    <main-page/>
+<router-view>  </router-view>
+<!--    <main-page/>-->
 
 
 
@@ -27,6 +27,7 @@ onMounted(() => {
 })
 
 
+
 import MainPage from "./views/pages/MainPage.vue";
 import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
 </script>
@@ -34,6 +35,7 @@ import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
 <style lang="scss">
   .main_styles {
     background: none;
-    ;
+   width: 100% ;
+    height: 100%;
   }
 </style>

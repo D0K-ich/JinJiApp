@@ -3,6 +3,10 @@ enum Users {
 	ChangeBalance 	= "users/change-balance",
 	Block	 		= "users/block",
 	Activate		= "users/activate",
+
+	//Chat
+	NewMessage      = "messages/new",
+	DialogsList		= "dialogs/list",
 }
 
 enum Tariffs {
@@ -31,3 +35,4 @@ export const Endpoints = {
 	Promocodes,
 	Billing
 }
+

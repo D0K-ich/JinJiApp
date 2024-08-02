@@ -1,12 +1,15 @@
 <template >
   <fon class="grddd d-flex" style="height: 100%; width: 100%">
 
-    <levo style="display: inline-block; width: 40em; height: 36em; position: relative;">
+    <v-row no-gutters >
 
-      <div class="d-flex" style="width: 100%; height: 100%">
-        <div class="hohline"/>
-        <v-img src="./src/views/pages/kot.jpg"  style="width: 70%; height: 70%; display: inline-block; position: absolute; bottom: 5%; left: 8%"/>
-      <div class="hahline"/>
+      <v-col cols="4" class="d-flex" style="position: relative; height: 36em">
+
+        <div class="hohline" />
+
+        <v-img src="./src/views/pages/kot.jpg" style="top: 20%; right: 20%; position: absolute" height="500" width="500" />
+
+        <div class="hahline" />
 
         <div class="custom-switch" @click="is_checked = !is_checked">
           <div class="custom-switch-track">
@@ -24,45 +27,55 @@
             :height="100"
             viewBox="0 0 24 24"
             @click="isRotated = !isRotated" style="fill: currentColor;" :class="{'rotated': isRotated}"  type="mdi" class="krutilka"> <path :d="iconPath"></path></svg>
-      </div>
-
-    </levo>
+      </v-col>
 
 
-    <osnova class="main-div">
+    <v-col cols="4"  class="d-flex" style="position: relative; height: 36em">
+     <v-img src="./src/views/pages/fhkg.jpg"  class="imag mt-4"/>
 
-      <div class="d-flex">
-       <v-img src="./src/views/pages/fhkg.jpg"  class="imag mt-4"/>
+        <v-btn class="lvl" style="margin-top: 3%">lvl. {{lvl}} </v-btn>
 
-        <div style="display: inline-block; width: 45%">
+        <v-btn class="lvl" style="position: absolute; top: 17%; right: 0">sub. {{sub}} </v-btn>
 
-          <v-btn class="lvl d-flex align-content-end align-center justify-center mt-4 ml-4">lvl. {{lvl}} </v-btn>
 
-          <v-btn class="lvl d-flex align-content-end align-center justify-center ml-4" style="margin-top: 12%">sub. {{sub}} </v-btn>
+        <v-img src="./src/views/pages/goblet.png" height="100" width="100"  class="goblet" style="position: absolute; top: 35%; right: 34%"/>
 
-          <div style="display: inline-block" class="imag">
+        <div class="achievements">{{ achi }}</div>
 
-            <div class="d-flex">
-              <v-img src="./src/views/pages/goblet.png"  class="goblet ml-4"/>
 
-              <div class="achievements">{{ achi }}</div>
-            </div>
 
-          </div>
 
-        </div>
-      </div>
 
-      <div class="nick-class d-flex align-content-center align-center justify-center"> <a href="#" style=""> {{ nick }} </a> </div>
-      <div class="line"/>
+    <div class="nick-class"> <a href="#" style=""> {{ nick }} </a> </div>
 
-    </osnova>
+    <div class="line"/>
 
-    <pravo style="display: inline-block; position: absolute; top: 1%; right: 5%; width: 35em; height: 35em; transform: rotate(90deg)">
+
+      <router-link to="/neirochat">
+        <v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%; border: #DB00FF 3px solid; border-radius: 30px">
+
+          <v-img src="./src/views/pages/Djinneir.png"  style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
+
+
+          <div  style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%" > DJIN </div>
+
+
+        </v-btn>
+      </router-link>
+
+    </v-col>
+
+
+
+
+    <v-col cols="4" class="d-flex"  style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)">
 
     <diagram/>
 
-    </pravo>
+    </v-col>
+
+
+
 
 <v-btn style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
 
@@ -76,16 +89,9 @@
 
 </v-btn>
 
-<v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; top: 50%; left: 38%; border: #DB00FF 3px solid; border-radius: 30px">
-
-  <v-img src="./src/views/pages/Djinneir.png"  style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
-
-  <div  style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%" > DJIN </div>
 
 
-</v-btn>
-
-<pravobottom style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
+<v-col style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
 
   <v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
   <div  style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> ANIME </div>
@@ -114,10 +120,13 @@
 
 
 
-</pravobottom>
+</v-col>
 
+
+    </v-row>
 
   </fon>
+
 </template>
 
 
@@ -126,7 +135,7 @@
 import {onMounted, ref, computed} from "vue";
 import { mdiAutorenew } from '@mdi/js';
 import {UsersStore} from "../../store/user";
-import Diagram from "./diagram.vue";
+import Diagram from "./Diagram.vue";
 
 const lvl = ref<number>(0)
 
@@ -158,7 +167,6 @@ onMounted(() => {
 })
 
 
-
 </script>
 
 <style scoped lang="scss">
@@ -180,7 +188,8 @@ onMounted(() => {
    font-size: 50px;
    text-align: center;
    width: 100%;
-   margin-top: 2%;
+   position: absolute;
+   bottom: 30%;
    color: #dfdfdf;
    font-family: 'Inria Sans', sans-serif;
 
@@ -198,14 +207,15 @@ onMounted(() => {
  .line {
    height: 3px;
    width: 80%;
-   margin-left: 10%;
-   margin-top: 3%;
+   position: absolute;
+   bottom: 25%;
+   left: 10%;
    background-color: #DB00FF
  }
 
  .imag {
-   width: 40%;
-   height: 40%;
+   width: 50%;
+   height: 50%;
    display: inline-block;
  }
 
@@ -213,8 +223,8 @@ onMounted(() => {
    background: none;
    border: #DB00FF 3px solid;
    border-radius: 30px;
-   height: 16em;
-   width: 20em;
+   height: 2em;
+   width: 10em;
    color: #dfdfdf;
    font-family: 'Inria Sans', sans-serif;
    font-size: 30px;
@@ -222,30 +232,26 @@ onMounted(() => {
  }
 
  .goblet {
-   margin-top: 11%;
-   width: 9em;
-   height: 9em;
-   display: inline-block;
+
  }
 
  .achievements {
- display: inline-block;
  height: fit-content;
- margin-top: 70%;
- margin-left: 20%;
+ position: absolute;
+ top: 40%;
+ right: 23%;
  font-size: 30px;
  }
 
  .hahline {
    width: 40%;
    height: 35%;
+   bottom: 1%;
+   right: 1%;
    position: absolute;
-   bottom: 0;
-   right: 0;
    border-bottom-right-radius: 30px;
    border-bottom: #DB00FF 3px solid;
    border-right: #DB00FF 3px solid;
-   display: inline-block;
 
  }
 
@@ -253,12 +259,12 @@ onMounted(() => {
  .hohline {
    width: 40%;
    height: 35%;
-   margin-left: 1%;
-   margin-top: 1%;
+   left: 1%;
+   position: absolute;
+   top: 1%;
    border-top-left-radius: 30px;
    border-top: #DB00FF 3px solid;
    border-left: #DB00FF 3px solid;
-   display: inline-block;
  }
 
  .custom-switch {
@@ -299,7 +305,7 @@ onMounted(() => {
    border: #DB00FF 3px solid;
    border-radius: 30px;
    width: 11em;
-   height: 20em;
+   height: 2em;
    text-align: center;
    display: inline-block;
    position: absolute;
@@ -311,7 +317,6 @@ onMounted(() => {
 
  .rotated {
    transform: rotate(180deg);
-
  }
 
  .krutilka {
