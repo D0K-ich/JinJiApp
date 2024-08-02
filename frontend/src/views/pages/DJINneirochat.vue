@@ -3,7 +3,7 @@
 
 	<fon class="grdd d-flex align-content-end align-center justify-center" style="height: 100%; width: 100%">
 
-		<v-row>
+		<v-row no-gutters>
 
 			<v-col cols="1" class="d-flex justify-center" style="min-width: calc(30vh - 60px); margin-left: 1%">
 
