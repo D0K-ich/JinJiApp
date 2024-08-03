@@ -1,16 +1,16 @@
 <template>
-	<div class="grddd d-flex" style="height: 100%; width: 100%">
+	<div class="fon d-flex" style="height: 100%; width: 100%">
 
 		<v-row no-gutters>
 
 			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
 
-				<div class="hohline"/>
+				<div class="left-line"/>
 
 				<v-img src="./src/views/pages/imgs/kot.jpg" style="top: 20%; right: 25%; position: absolute"
 				       height="500" width="400"/>
 
-				<div class="hahline"/>
+				<div class="right-line"/>
 
 				<div class="custom-switch" @click="is_checked = !is_checked">
 					<div class="custom-switch-track">
@@ -26,33 +26,32 @@
 					:width="100"
 					:height="100"
 					viewBox="0 0 24 24"
-					@click="isRotated = !isRotated" style="fill: currentColor;" :class="{'rotated': isRotated}"
-					type="mdi" class="krutilka">
+					@click="is_rotated = !is_rotated" style="fill: currentColor;" :class="{'rotated': is_rotated}"
+					type="mdi" class="arrows">
 					<path :d="iconPath"></path>
 				</svg>
 			</v-col>
 
 
 			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
-				<v-img src="./src/views/pages/imgs/fhkg.jpg" class="imag mt-4"/>
+				<v-img src="./src/views/pages/imgs/fhkg.jpg" class="avatar mt-4"/>
 
-				<v-btn class="lvl" style="margin-top: 3%">lvl. {{ lvl }}</v-btn>
+				<v-btn class="level-subscription" style="margin-top: 3%">lvl. {{ level }}</v-btn>
 
-				<v-btn class="lvl" style="position: absolute; top: 17%; right: 0">sub. {{ sub }}</v-btn>
+				<v-btn class="level-subscription" style="position: absolute; top: 17%; right: 0">sub. {{ subscription }}</v-btn>
 
 				<v-img src="./src/views/pages/imgs/goblet.png" height="100" width="100" class="goblet" style="position: absolute; top: 35%; right: 34%"/>
 
-				<div class="achievements">{{ achi }}</div>
+				<div class="achievements">{{ achievements_count }}</div>
 
-				<div class="nick-class"><a href="#" style=""> {{ nick }} </a></div>
+				<div class="nick-class"><a href="#" style=""> {{ nickname }} </a></div>
 
-				<div class="line"/>
+				<div class="middle-line"/>
 
 				<router-link to="/neirochat">
 					<v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%; border: #DB00FF 3px solid; border-radius: 30px">
 
 						<v-img src="./src/views/pages/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
-
 
 						<div style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%">DJIN</div>
 
@@ -116,51 +115,46 @@
 			</v-col>
 
 		</v-row>
-
 	</div>
 </template>
 
 
 <script setup lang="ts">
-
 import {onMounted, ref, computed} from "vue";
 import {mdiAutorenew} from '@mdi/js';
 import {UsersStore} from "../../store/user";
 import Diagram from "./Diagram.vue";
 
 //todo rename
-const lvl   = ref<number>(0)
-const sub   = ref<string>('baza')
-const achi  = ref<number>(0)
-const nick  = ref<string>('nickname')
-const isRotated = ref(false);
+const level                 = ref<number>(0)
+const subscription          = ref<string>('baza')
+const achievements_count    = ref<number>(0)
+const nickname              = ref<string>('nickname')
+const is_rotated            = ref<boolean>(false)
+const is_checked            = ref<boolean>(false)
 
-const user_store = UsersStore()
-
-const is_checked = ref<boolean>(false)
-const iconPath = computed(() => mdiAutorenew);
+const user_store    = UsersStore()
+const iconPath      = computed(() => mdiAutorenew)
 
 const textAiChecked = (): string => {
 	if (!is_checked.value) {return 'Your AI selection'}
 	return 'Our AI selection'
 }
 
-
 onMounted(() => {
-	user_store.UserList()
+	user_store.UserInfo()
 		.then(() => {
-			nick.value  = user_store.User.name
-			lvl.value   = user_store.User.level
+			nickname.value  = user_store.User.name
+			level.value   = user_store.User.level
 		})
 })
 
-
 </script>
-
 
 <!--//todo need refactor -->
 <style scoped lang="scss">
-.grddd {
+
+.fon {
 	background: linear-gradient(167deg, #000000, 70%, #3A114D);
 }
 
@@ -192,7 +186,7 @@ onMounted(() => {
 	color: #d700ff;
 }
 
-.line {
+.middle-line {
 	height: 3px;
 	width: 80%;
 	position: absolute;
@@ -201,13 +195,13 @@ onMounted(() => {
 	background-color: #DB00FF
 }
 
-.imag {
+.avatar {
 	width: 50%;
 	height: 50%;
 	display: inline-block;
 }
 
-.lvl {
+.level-subscription {
 	background: none;
 	border: #DB00FF 3px solid;
 	border-radius: 30px;
@@ -216,11 +210,6 @@ onMounted(() => {
 	color: #dfdfdf;
 	font-family: 'Inria Sans', sans-serif;
 	font-size: 30px;
-
-}
-
-.goblet {
-
 }
 
 .achievements {
@@ -231,7 +220,7 @@ onMounted(() => {
 	font-size: 30px;
 }
 
-.hahline {
+.right-line {
 	width: 40%;
 	height: 35%;
 	bottom: 1%;
@@ -240,11 +229,9 @@ onMounted(() => {
 	border-bottom-right-radius: 30px;
 	border-bottom: #DB00FF 3px solid;
 	border-right: #DB00FF 3px solid;
-
 }
 
-
-.hohline {
+.left-line {
 	width: 40%;
 	height: 35%;
 	left: 1%;
@@ -307,7 +294,7 @@ onMounted(() => {
 	transform: rotate(180deg);
 }
 
-.krutilka {
+.arrows {
 	cursor: pointer;
 	transition: transform 0.3s ease-in-out;
 	display: inline-block;

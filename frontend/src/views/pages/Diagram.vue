@@ -1,19 +1,9 @@
-
 <template>
-
   <Bar :data="data" :options="options"/>
-
-
-
-
 </template>
 
-
-
 <script setup lang="ts">
-
-
-import {ref} from "vue";
+import {ref} from "vue"
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -22,58 +12,60 @@ import {
   Legend,
   BarElement,
   CategoryScale,
-  LinearScale
+  LinearScale,
 } from 'chart.js'
 
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ChartDataLabels);
+import ChartDataLabels from 'chartjs-plugin-datalabels'
 
-const janr  = ref<string>('sosat')
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ChartDataLabels,)
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend,)
 
-const dv    = ref<number>(20)
-const sor   = ref<number>(40)
-const hst   = ref<number>(60)
-const vsmd  = ref<number>(80)
-const sto   = ref<number>(100)
+const genre_example_1  = ref<string>('sosat1')
+const genre_example_2  = ref<string>('sosat2')
+const genre_example_3  = ref<string>('sosat3')
+const genre_example_4  = ref<string>('sosat4')
+const genre_example_5  = ref<string>('sosat5')
 
-const janrColor = (sas :number):string  => {
+const color_example_1  = ref<number>(20)
+const color_example_2  = ref<number>(40)
+const color_example_3  = ref<number>(60)
+const color_example_4  = ref<number>(80)
+const color_example_5  = ref<number>(100)
+
+const genreColor = (sas :number):string  => {
   switch(true) {
-    case sas <= 20 && sas >= 0 : {return '#4f005a';}
-    case sas <= 40 && sas > 20 : {return '#98277e';}
-    case sas <= 60 && sas > 40 : {return '#9264b6';}
-    case sas <= 80 && sas > 60 : {return '#DB00FF';}
-    case sas <= 100 && sas > 80: {return '#8400ff';}
+    case sas <= 20 && sas >= 0  : {return '#4f005a'}
+    case sas <= 40 && sas > 20  : {return '#98277e'}
+    case sas <= 60 && sas > 40  : {return '#9264b6'}
+    case sas <= 80 && sas > 60  : {return '#DB00FF'}
+    case sas <= 100 && sas > 80 : {return '#8400ff'}
   }
-
   return ''
 }
 
-
-
 const data = {
   labels: [
-    janr.value,
-    janr.value,
-    janr.value,
-    janr.value,
-    janr.value,
+	genre_example_1.value,
+    genre_example_2.value,
+    genre_example_3.value,
+    genre_example_4.value,
+    genre_example_5.value,
   ],
   datasets: [
     {
       label: false,
       backgroundColor: [
-        janrColor(vsmd.value),
-        janrColor(sor.value),
-        janrColor(dv.value),
-        janrColor(hst.value),
-        janrColor(sto.value),
+        genreColor(color_example_1.value),
+        genreColor(color_example_2.value),
+        genreColor(color_example_3.value),
+        genreColor(color_example_4.value),
+        genreColor(color_example_5.value),
       ],
-      data: [vsmd.value, sor.value, dv.value, hst.value, sto.value],
+      data: [color_example_1.value, color_example_2.value, color_example_3.value, color_example_4.value, color_example_5.value],
     }
   ]
 }
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 const options = {
   responsive: true,
   maintainAspectRatio: true,
@@ -83,7 +75,6 @@ const options = {
       display: false,
       position: 'top'
     },
-
     datalabels: {
       color: '#DB00FF',
       anchor: 'end',
@@ -120,14 +111,7 @@ const options = {
     },
   },
 }
-
-
-
-
 </script>
 
-
-
 <style scoped lang="scss">
-
 </style>

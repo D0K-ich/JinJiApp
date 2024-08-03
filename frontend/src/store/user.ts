@@ -14,13 +14,10 @@ export const UsersStore = defineStore('users', {
     }),
 
     actions : {
-        UserList() {
+        UserInfo() {
             return new Promise((resolve, reject) => {
                 network.UserPost<UserInfoResponse>(Endpoints.Users.Get, {
-                    "_module" : "profile",
-                    "_subject": "profile",
-                    "_action": "get",
-                    "name" : "name"
+                    "name" : "name" //todo
                 })
                     .then((r) => {
                         if (r.user != null) {
@@ -64,12 +61,9 @@ export const UsersStore = defineStore('users', {
         },
 
 
-        UpdateUser() {
+        UpdateUser() { //todo
             return new Promise((resolve, reject) => {
                 network.UserPost<UserInfoResponse>(Endpoints.Users.Get, {
-                    "_module" : "profile",
-                    "_subject": "profile",
-                    "_action": "get",
                     "name" : "name"
                 })
                     .then((r) => {

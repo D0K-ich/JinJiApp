@@ -22,8 +22,7 @@
 
 			</v-col>
 
-			<v-col cols="9"
-			       style=" background-color: #3A114D; margin-left: 1%; margin-top: 3%; height: calc(100vh - 67px); border: rgba(219, 0, 255, 0.5) 2px solid ; border-radius: 30px; box-shadow: 0 0 15px rgba(219, 0, 255, 1)">
+			<v-col cols="9" style=" background-color: #3A114D; margin-left: 1%; margin-top: 3%; height: calc(100vh - 67px); border: rgba(219, 0, 255, 0.5) 2px solid ; border-radius: 30px; box-shadow: 0 0 15px rgba(219, 0, 255, 1)">
 
 				<div class="d-flex justify-center" style="font-size: 20px; font-family: 'Inria Sans', sans-serif; color: #cfd9df">1 september 1941</div>
 
@@ -66,7 +65,6 @@
 	</div>
 
 </template>
-
 
 <script setup lang="ts">
 import {register} from 'vue-advanced-chat'
