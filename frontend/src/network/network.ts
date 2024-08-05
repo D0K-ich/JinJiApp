@@ -5,15 +5,16 @@ import axios, {
     AxiosResponse,
     RawAxiosRequestHeaders
 } from "axios"
+import {config} from "./config";
 
 class Network {
 
     private adminApi		: AxiosInstance = axios.create({
-        baseURL : `http://192.168.2.107:8084/`,
+        baseURL : config.adminHttpUrl(),
         timeout : 30000,
         headers : <RawAxiosRequestHeaders> {
             'Content-Type'	: 'application/json; charset=UTF-8',
-            'x-access-token': "", //TODO
+            'x-access-token': config.adminToken(),
         }
     })
 
@@ -32,7 +33,6 @@ class Network {
         const r_conf : AxiosRequestConfig = {timeout : timeout || 30000, withCredentials: true}
         return new Promise<T>((resolve, reject) => {
             payload = self.setPostSpecFields(payload)
-            payload['_access_token']= "" //TODO
             self.adminApi.post([module, subject, action].join("/"), payload, r_conf)
                 .then((res : AxiosResponse<T>) => {resolve(res.data)})
                 .catch((err) => {
