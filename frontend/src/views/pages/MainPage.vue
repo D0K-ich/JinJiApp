@@ -46,7 +46,12 @@
 
 				<div class="nick-class"><a href="#" style=""> {{ nickname }} </a></div>
 
-				<div class="middle-line"/>
+    <div class="nick-class"> <a href="/reglog"> {{ nick }} </a> </div>
+
+
+
+    <div class="line"/>
+
 
 				<router-link to="/neirochat">
 					<v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%; border: #DB00FF 3px solid; border-radius: 30px">
