@@ -18,7 +18,6 @@ defineProps<{
 
 </script>
 
-
 <style lang="scss" scoped>
  .model {
    position: absolute;

@@ -15,7 +15,7 @@
 							class="ma-4"
 							style="word-wrap: break-word; background-color: rgba(219, 0, 255, 1); border-radius: 30px">
 
-							<v-card-text class="ma-2" style="font-size: 20px; font-family: 'Inria Sans', sans-serif; color: black">{{ item.header }}</v-card-text>
+							<v-card-text class="ma-2" style="font-size: 20px; color: black">{{ item.header }}</v-card-text>
 						</v-card>
 					</template>
 				</v-virtual-scroll>
@@ -24,7 +24,7 @@
 
 			<v-col cols="9" style=" background-color: #3A114D; margin-left: 1%; margin-top: 3%; height: calc(100vh - 67px); border: rgba(219, 0, 255, 0.5) 2px solid ; border-radius: 30px; box-shadow: 0 0 15px rgba(219, 0, 255, 1)">
 
-				<div class="d-flex justify-center" style="font-size: 20px; font-family: 'Inria Sans', sans-serif; color: #cfd9df">1 september 1941</div>
+				<div class="d-flex justify-center" style="font-size: 20px">1 september 1941</div>
 
 				<v-virtual-scroll style="scrollbar-width: none" :width="1500" :height="795" :items="messages">
 
@@ -40,7 +40,7 @@
 					<v-text-field @keyup.enter="sendMessage" v-model="user_message" variant="solo" bg-color="rgba(219, 0, 255, 0.5)" class="ml-15 input-field">
 
 						<template v-slot:append-inner>
-							<v-btn style="background: none;" @click="sendMessage">
+							<v-btn @click="sendMessage">
 								<v-img src="./src/views/pages/imgs/lapa.png" :height="30" :width="30"/>
 							</v-btn>
 						</template>

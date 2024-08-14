@@ -1,11 +1,8 @@
 <template>
-  <v-app class="main_styles">
-<router-view>  </router-view>
-<!--    <main-page/>-->
-
-
-
-  </v-app>
+	<preloader :percent_loaded=percent_loaded />
+<!--	<v-app class="main_styles">-->
+<!--		<router-view/>-->
+<!--	</v-app>-->
 </template>
 
 <script lang="ts" setup>
@@ -16,26 +13,25 @@ const percent_loaded  = ref<number>(0)
 const ready = ref<boolean>(false)
 
 onMounted(() => {
-  CreateWebsocket("ws://localhost:8080/ws")
+    CreateWebsocket("ws://localhost:54321/sync-timings")
 
-  setInterval(() => {
-    percent_loaded.value += Math.floor( Math.random() * 10)
-    if (percent_loaded.value >= 100) {ready.value = true; CloseWebsocket()}
-  }, 100)
-
+    setInterval(() => {
+        percent_loaded.value += Math.floor( Math.random() * 10)
+        if (percent_loaded.value >= 100) {
+			ready.value = true; SendWsMessage(percent_loaded.value); percent_loaded.value = 0
+		}
+    }, 100)
 
 })
 
-
-
-import MainPage from "./views/pages/MainPage.vue";
-import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
+import {CloseWebsocket, CreateWebsocket, SendWsMessage} from "./network/websocket";
+import Preloader from "./views/preloader/Preloader.vue";
 </script>
 
 <style lang="scss">
   .main_styles {
     background: none;
-   width: 100% ;
+    width: 100% ;
     height: 100%;
   }
 </style>

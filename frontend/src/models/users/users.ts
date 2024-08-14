@@ -30,3 +30,8 @@ export interface Message {
     sender: string
     time: number
 }
+
+export interface Timing {
+    new_duration: string
+    last_duration: string
+}

@@ -1,14 +1,12 @@
 <template>
 	<div class="fon d-flex" style="height: 100%; width: 100%">
-
 		<v-row no-gutters>
 
 			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
 
 				<div class="left-line"/>
 
-				<v-img src="./src/views/pages/imgs/kot.jpg" style="top: 20%; right: 25%; position: absolute"
-				       height="500" width="400"/>
+				<v-img src="./src/views/pages/imgs/kot.jpg" style="top: 20%; right: 25%; position: absolute" height="500" width="400"/>
 
 				<div class="right-line"/>
 
@@ -20,7 +18,7 @@
 
 				</div>
 
-				<v-btn class="textAI"> {{ textAiChecked() }}</v-btn>
+				<v-btn class="textAI"><a :href="textAiChecked().href">{{ textAiChecked().name }}</a></v-btn>
 
 				<svg
 					:width="100"
@@ -31,7 +29,6 @@
 					<path :d="iconPath"></path>
 				</svg>
 			</v-col>
-
 
 			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
 				<v-img src="./src/views/pages/imgs/fhkg.jpg" class="avatar mt-4"/>
@@ -44,39 +41,28 @@
 
 				<div class="achievements">{{ achievements_count }}</div>
 
-				<div class="nick-class"><a href="#" style=""> {{ nickname }} </a></div>
+				<div class="nick-class"><a href="/reglog"> {{ nickname }} </a></div>
 
-    <div class="nick-class"> <a href="/reglog"> {{ nick }} </a> </div>
-
-
-
-    <div class="line"/>
-
-
-				<router-link to="/neirochat">
-					<v-btn class="d-flex align-center" style="background: none; display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%; border: #DB00FF 3px solid; border-radius: 30px">
+				<router-link to="/jin-chat">
+					<v-btn class="d-flex align-center" style="display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%">
 
 						<v-img src="./src/views/pages/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
 
-						<div style="font-size: 60px; color: #cfd9df; font-family: 'Inria Sans', sans-serif;  letter-spacing: 10px; margin-left: 45%">DJIN</div>
+						<div style="font-size: 60px; letter-spacing: 10px; margin-left: 45%">DJIN</div>
 
 					</v-btn>
 				</router-link>
 
 			</v-col>
 
-			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)">
+			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)"><diagram/></v-col>
 
-				<diagram/>
-
-			</v-col>
-
-			<v-btn  style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%; border: #DB00FF 3px solid; border-radius: 30px">
+			<v-btn  style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%">
 
 				<div style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">
 
-					<div style="font-size: 35px; color: #cfd9df; position: absolute; top: 7%; left: 50%"> HEADER HEADER	</div>
-					<div style="font-size: 20px; color: #cfd9df; position: absolute; top: 40%; left: 30%">
+					<div style="font-size: 35px; position: absolute; top: 7%; left: 50%"> HEADER HEADER	</div>
+					<div style="font-size: 20px; position: absolute; top: 40%; left: 30%">
 						<p> text text text text text text text </p>
 						<p> text text text text text text text </p>
 						<p> text text text text text text text </p>
@@ -88,33 +74,28 @@
 			</v-btn>
 
 			<v-col style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
-
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> ANIME</div>
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> ANIME</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MANGA</div>
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%">
+					<div style="font-size: 40px"> MANGA</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> FILMS</div>
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> FILMS</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> SETTINGS
-					</div>
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> SETTINGS</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-					<div style="font-size: 25px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> COLLECTIVE
-						VIEWING
-					</div>
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%">
+					<div style="font-size: 25px"> COLLECTIVE VIEWING</div>
 				</v-btn>
 
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%; border: #DB00FF 3px solid; border-radius: 30px">
-					<div style="font-size: 40px; color: #cfd9df; font-family: 'Inria Sans', sans-serif; "> MY CHOICE
-					</div>
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> MY CHOICE	</div>
 				</v-btn>
 
 			</v-col>
@@ -141,16 +122,16 @@ const is_checked            = ref<boolean>(false)
 const user_store    = UsersStore()
 const iconPath      = computed(() => mdiAutorenew)
 
-const textAiChecked = (): string => {
-	if (!is_checked.value) {return 'Your AI selection'}
-	return 'Our AI selection'
+const textAiChecked = () : {name : string, href : string} => {//todo
+	if (!is_checked.value) {return {name : 'Your AI selection', href : ""}}
+	return {name : 'Our AI selection', href : ""}
 }
 
 onMounted(() => {
 	user_store.UserInfo()
 		.then(() => {
 			nickname.value  = user_store.User.name
-			level.value   = user_store.User.level
+			level.value     = user_store.User.level
 		})
 })
 
@@ -177,18 +158,19 @@ onMounted(() => {
 	width: 100%;
 	position: absolute;
 	bottom: 30%;
-	color: #dfdfdf;
-	font-family: 'Inria Sans', sans-serif;
-
 }
 
-.nick-class a {
-	color: #cfd9df;
-	text-decoration: none;
-}
+.nick-class:after {
+	content: '';
 
-.nick-class a:hover {
-	color: #d700ff;
+	width: 50%;
+	position: absolute;
+	left: 25%;
+	bottom: -25%;
+
+	border-width: 0 0 3px;
+	border-style: solid;
+	border-color: #DB00FF;
 }
 
 .middle-line {
@@ -310,7 +292,6 @@ onMounted(() => {
 	width: 13%;
 	height: 13%
 }
-
 
 </style>
 

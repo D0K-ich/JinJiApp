@@ -6,22 +6,22 @@
 				<v-row no-gutters>
 				<v-col cols="12" class="d-flex" style="height: fit-content">
 				<div style="color: #DB00FF; font-size: 40px; height: fit-content" class="ma-10"> REG </div>
-				<div style="color: #cfd9df; font-size: 40px; height: fit-content; margin-left: 70%" class="mt-10"> LOG </div>
+				<div style="font-size: 40px; height: fit-content; margin-left: 70%" class="mt-10"> LOG </div>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
-					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 2%" class="ml-16"> NIK </div>
+					<div style="font-size: 50px; height: fit-content;margin-top: 2%" class="ml-16"> NIK </div>
 					<v-text-field  variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cusron"/>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
-					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 3%" class="ml-12"> MAIL </div>
+					<div style="font-size: 50px; height: fit-content;margin-top: 3%" class="ml-12"> MAIL </div>
 					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-10 cusron"/>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
-					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 3%" class="ml-8"> CODE </div>
+					<div style="font-size: 50px; height: fit-content;margin-top: 3%" class="ml-8"> CODE </div>
 					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-8 cusron"/>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
-					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 3%" class="ml-8"> PAROLE </div>
+					<div style="font-size: 50px; height: fit-content;margin-top: 3%" class="ml-8"> PAROLE </div>
 					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cursron"/>
 				</v-col>
 				<v-col>
