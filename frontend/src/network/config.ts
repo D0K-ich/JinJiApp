@@ -10,7 +10,7 @@ class Config {
 
     private hosts : Record<TargetServers, string> = {
         [TargetServers.Prod]	: 'djinji.net',//todo
-        [TargetServers.Dev]		: '192.168.2.107:8084',
+        [TargetServers.Dev]		: '192.168.2.129:8084',
     }
 
     constructor() {
