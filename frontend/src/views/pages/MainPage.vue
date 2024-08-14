@@ -46,7 +46,9 @@
 
 
 
-    <div class="nick-class"> <a href="#" style=""> {{ nick }} </a> </div>
+    <div class="nick-class"> <a href="/reglog"> {{ nick }} </a> </div>
+
+
 
     <div class="line"/>
 
