@@ -1,9 +1,12 @@
 enum Users {
-	Get 			= "get/by-name",
+	Get 			= "profile/get",
 	ChangeBalance 	= "users/change-balance",
 	Block	 		= "users/block",
 	Activate		= "users/activate",
-	Nuemesage       = "messages/new"
+
+	//Chat
+	NewMessage      = "messages/new",
+	DialogsList		= "dialogs/list",
 }
 
 enum Tariffs {

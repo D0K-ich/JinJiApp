@@ -2,7 +2,7 @@ import {User} from "../models/users/users";
 import {defineStore} from 'pinia'
 import {Endpoints} from "../models/users/requests";
 import network from "../network/network";
-import {UserInfoResponse} from "../models/users/responses";
+import {DialogDjin, MessageDjin, UserInfoResponse} from "../models/users/responses";
 
 interface State {
     User: User
@@ -14,13 +14,10 @@ export const UsersStore = defineStore('users', {
     }),
 
     actions : {
-        UserList() {
+        UserInfo() {
             return new Promise((resolve, reject) => {
-                network.BillingPost<UserInfoResponse>(Endpoints.Users.Get, {
-                    "_module" : "profile",
-                    "_subject": "profile",
-                    "_action": "get",
-                    "name" : "name"
+                network.UserPost<UserInfoResponse>(Endpoints.Users.Get, {
+                    "name" : "name" //todo
                 })
                     .then((r) => {
                         if (r.user != null) {
@@ -37,21 +34,25 @@ export const UsersStore = defineStore('users', {
         },
 
 
-        MessengNeiro(message : string) {
+        NewMessageDjin(message : string) : Promise<MessageDjin>  {
             return new Promise((resolve, reject) => {
-                network.BillingPost<UserInfoResponse>(Endpoints.Users.Nuemesage, {
-                    _module : "user",
-                    _subject: "messages",
-                    _action: "new",
-                    user_message : message
-                })
+                network.UserPost<MessageDjin>(Endpoints.Users.NewMessage, {user_message : message})
                     .then((r) => {
-                        if (r.user != null) {
-                            this.User = r.user
-                            return resolve(r)
-                        }
-                        this.User = <User>{}
                         resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
+
+        DialogList() : Promise<DialogDjin[]>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<DialogDjin[]>(Endpoints.Users.NewMessage, {user_id : this.User.uuid})
+                    .then((r) => {
+                        resolve(r)
+                        return r
                     })
                     .catch((err) => {
                         reject(err)
@@ -82,12 +83,9 @@ export const UsersStore = defineStore('users', {
         // },
 
 
-        UpdateUser() {
+        UpdateUser() { //todo
             return new Promise((resolve, reject) => {
-                network.BillingPost<UserInfoResponse>(Endpoints.Users.Get, {
-                    "_module" : "profile",
-                    "_subject": "profile",
-                    "_action": "get",
+                network.UserPost<UserInfoResponse>(Endpoints.Users.Get, {
                     "name" : "name"
                 })
                     .then((r) => {

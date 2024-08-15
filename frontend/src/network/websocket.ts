@@ -1,15 +1,30 @@
-export let KanopyWS : WebSocket
+import {Timing} from "../models/users/users";
+import parse from 'parse-duration'
+
+export let JinJi : WebSocket
 
 export const CreateWebsocket = (url : string) => {
-    if(KanopyWS) {return}
-    KanopyWS = new WebSocket(url)
+    if(JinJi) {return}
+    JinJi = new WebSocket(url)
 
-    if (KanopyWS != undefined) {KanopyWS.onopen = () => {KanopyWS.send("Hello, 123123!")}}
+   JinJi.onmessage = (EventTarget) => {
+        console.log(JSON.parse(EventTarget.data)); return EventTarget.data
+    }
+
+    // if (JinJi != undefined) {JinJi.onopen = () => {JinJi.send("Hello, 123123!")}}
 }
 
 export const CloseWebsocket = () : void => {
-    if(!KanopyWS) {return}
+    if(!JinJi) {return}
 
-    KanopyWS.close(1000, "Stopped")
+    JinJi.close(1000, "Stopped")
 }
 
+export const SendWsMessage = (message : number) => {
+    if (!JinJi) {return ''}
+
+    let time = parse("1s")
+    console.log(time)
+
+    JinJi.send(JSON.stringify(<Timing>{last_duration: "10s"}))
+}

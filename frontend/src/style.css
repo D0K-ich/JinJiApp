@@ -4,8 +4,24 @@ html {
 }
 
 body {
-    color: white;
+    color: #cfd9df;
     font-family: 'Inria Sans', sans-serif;
+}
+
+/* buttons */
+body .v-btn--size-default, .v-btn--density-default, .v-btn {
+    border-radius: 30px;
+    background: none;
+    border: #DB00FF 3px solid;
+}
+
+a {
+    color: #cfd9df;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d700ff;
 }
 
 @font-face {
@@ -14,8 +30,4 @@ body {
     font-weight: 400;
     src: local(""),
     url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
-}
-
-#app {
-    font-family: 'Inria Sans', sans-serif;
 }

@@ -5,30 +5,26 @@ import axios, {
     AxiosResponse,
     RawAxiosRequestHeaders
 } from "axios"
+import {config} from "./config";
 
 class Network {
 
     private adminApi		: AxiosInstance = axios.create({
-        baseURL : `http://192.168.2.107:8084/`,
+        baseURL : config.adminHttpUrl(),
         timeout : 30000,
         headers : <RawAxiosRequestHeaders> {
             'Content-Type'	: 'application/json; charset=UTF-8',
-            'x-access-token': "", //TODO
+            'x-access-token': config.adminToken(),
         }
     })
 
-    BillingPost<T>(path : string, payload : Record<string, any>, timeout? : number) {
+    UserPost<T>(path : string, payload : Record<string, any>, timeout? : number) {
         const parts : string[] = path.split('/')
         return this.adminPost<T>('user', parts[0], parts.length > 1 ? parts[1] : '', payload, timeout)
     }
 
     private setPostSpecFields(payload : Record<string, any>) : Record<string, any> {
         payload['_type']		= "request"
-        // payload['_uuid']		= uuidv4()
-        // payload['_client_uuid']	= self.clientUuid
-        // payload['_link_uuid'] 	= self.linkUuid
-        // payload['_subject']		= subject
-        // payload['_action']		= action
         return payload
     }
 
@@ -37,10 +33,6 @@ class Network {
         const r_conf : AxiosRequestConfig = {timeout : timeout || 30000, withCredentials: true}
         return new Promise<T>((resolve, reject) => {
             payload = self.setPostSpecFields(payload)
-            payload['_module']		= "user"
-            payload['_subject']		= "messages"
-            payload['_action']		= "new"
-            payload['_access_token']= "" //TODO
             self.adminApi.post([module, subject, action].join("/"), payload, r_conf)
                 .then((res : AxiosResponse<T>) => {resolve(res.data)})
                 .catch((err) => {

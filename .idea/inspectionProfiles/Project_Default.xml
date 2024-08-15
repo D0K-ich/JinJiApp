@@ -1,6 +1,7 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="DotEnvTrailingWhitespaceInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GoAssignmentToReceiver" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="GoBoolExpressions" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GoBuildTag" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
@@ -56,5 +57,11 @@
     <inspection_tool class="GoUnitSpecificDurationSuffix" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="GoUnreachableCode" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="GoUnsortedImport" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoUnusedCallResult" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoUnusedExportedFunction" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoUnusedFunction" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoUnusedParameter" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoUnusedTypeParameter" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GoVarAndConstTypeMayBeOmitted" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   </profile>
 </component>

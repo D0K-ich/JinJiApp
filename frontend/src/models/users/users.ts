@@ -19,3 +19,19 @@ export interface User {
     achievements         : any
     friends				: any
 }
+
+export interface Image {
+    redirect_path: string
+    path_image: string
+}
+
+export interface Message {
+    content: string
+    sender: string
+    time: number
+}
+
+export interface Timing {
+    new_duration: string
+    last_duration: string
+}
