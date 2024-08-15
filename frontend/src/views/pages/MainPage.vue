@@ -1,4 +1,4 @@
-<template >
+<template>
   <fon class="grddd d-flex" style="height: 100%; width: 100%">
 
     <v-row no-gutters >
@@ -173,7 +173,8 @@ onMounted(() => {
 
 <style scoped lang="scss">
  .grddd {
-   background: linear-gradient(167deg, #000000, 70%, #3A114D);
+	 background: none;
+   //background: linear-gradient(167deg, #000000, 70%, #3A114D);
  }
 
 

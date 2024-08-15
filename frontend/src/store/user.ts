@@ -59,6 +59,28 @@ export const UsersStore = defineStore('users', {
             })
         },
 
+        // SendMailCode(message : string) {
+        //     return new Promise((resolve, reject) => {
+        //         network.BillingPost<UserInfoResponse>(Endpoints.Users.Nuemesage, {
+        //             _module : "user",
+        //             _subject: "messages",
+        //             _action: "new",
+        //             user_message : message
+        //         })
+        //             .then((r) => {
+        //                 if (r.user != null) {
+        //                     this.User = r.user
+        //                     return resolve(r)
+        //                 }
+        //                 this.User = <User>{}
+        //                 resolve(r)
+        //             })
+        //             .catch((err) => {
+        //                 reject(err)
+        //             })
+        //     })
+        // },
+
 
         UpdateUser() {
             return new Promise((resolve, reject) => {

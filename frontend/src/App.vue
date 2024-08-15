@@ -1,7 +1,7 @@
-<template>
-  <v-app class="main_styles">
+<template >
+  <v-app class="main_styles bg-transparent">
 <router-view>  </router-view>
-<!--    <main-page/>-->
+
 
 
 
@@ -34,8 +34,10 @@ import {CloseWebsocket, CreateWebsocket} from "./network/websocket";
 
 <style lang="scss">
   .main_styles {
-    background: none;
+    //background: transparent !important;
    width: 100% ;
     height: 100%;
   }
+
+
 </style>

@@ -18,7 +18,7 @@ const app = createApp(App)
 const dok_theme = {
     dark: true,
     colors: {
-        background: '#120332',
+        // background: 'transparent',
         surface: '#120332', //for fill components
         'surface-bright': '#9370DBFF',
         'surface-light': '#9370DBFF',
