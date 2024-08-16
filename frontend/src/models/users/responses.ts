@@ -14,3 +14,15 @@ export interface DialogDjin {
     sub_header  : string
     time        : number
 }
+
+export interface Status {
+    status      : string
+}
+
+
+
+
+export interface AuthResponse {
+    user_id     : string
+    auth_token  : string
+}

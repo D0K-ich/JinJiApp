@@ -14,7 +14,6 @@ const ready = ref<boolean>(false)
 
 const grpc_client = NewGrpcAuthClient("localhost:11223")
 
-
 onMounted(() => {
     CreateWebsocket("ws://localhost:54321/sync-timings")
 
@@ -24,7 +23,6 @@ onMounted(() => {
 	// 		ready.value = true; SendWsMessage(percent_loaded.value); percent_loaded.value = 0
 	// 	}
     // }, 100)
-
 })
 
 import {CloseWebsocket, CreateWebsocket, SendWsMessage} from "./network/websocket";
@@ -34,8 +32,8 @@ import {NewGrpcAuthClient} from "./store/users-grpc";
 
 <style lang="scss">
   .main_styles {
-    background: none;
-    width: 100% ;
+    background: transparent !important;
+   width: 100% ;
     height: 100%;
   }
 </style>

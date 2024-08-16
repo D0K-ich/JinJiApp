@@ -9,14 +9,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link href="./src/style.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
 <div id="app">
 
 </div>
+
 <script src="./src/main.ts" type="module"></script>
+<script src="./src/assets/scripts/three.min.js"></script>
+<script src="./src/assets/scripts/vanta.net.min.js"></script>
+<script>
+    VANTA.NET({
+        el: "html",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 993.00,
+        minWidth: 500.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xc63fff,
+        backgroundColor: 0x0,
+        points: 14.00,
+        maxDistance: 17.00,
+        spacing: 19.00
+    })
+</script>
 </body>
 
 </html>

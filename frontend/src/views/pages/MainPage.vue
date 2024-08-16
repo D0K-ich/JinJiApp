@@ -139,10 +139,10 @@ onMounted(() => {
 
 <!--//todo need refactor -->
 <style scoped lang="scss">
-
-.fon {
-	background: linear-gradient(167deg, #000000, 70%, #3A114D);
-}
+ .grddd {
+	 background: none;
+   //background: linear-gradient(167deg, #000000, 70%, #3A114D);
+ }
 
 .main-div {
 	height: 27em;
