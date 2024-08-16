@@ -30,75 +30,75 @@
 				</svg>
 			</v-col>
 
-<!--			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">-->
-<!--				<v-img src="./src/views/pages/imgs/fhkg.jpg" class="avatar mt-4"/>-->
+			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
+				<v-img src="./src/views/pages/imgs/fhkg.jpg" class="avatar mt-4"/>
 
-<!--				<v-btn class="level-subscription" style="margin-top: 3%">lvl. {{ level }}</v-btn>-->
+				<v-btn class="level-subscription" style="margin-top: 3%">lvl. {{ level }}</v-btn>
 
-<!--				<v-btn class="level-subscription" style="position: absolute; top: 17%; right: 0">sub. {{ subscription }}</v-btn>-->
+				<v-btn class="level-subscription" style="position: absolute; top: 17%; right: 0">sub. {{ subscription }}</v-btn>
 
-<!--				<v-img src="./src/views/pages/imgs/goblet.png" height="100" width="100" class="goblet" style="position: absolute; top: 35%; right: 34%"/>-->
+				<v-img src="./src/views/pages/imgs/goblet.png" height="100" width="100" class="goblet" style="position: absolute; top: 35%; right: 34%"/>
 
-<!--				<div class="achievements">{{ achievements_count }}</div>-->
+				<div class="achievements">{{ achievements_count }}</div>
 
-<!--				<div class="nick-class"><a href="/reglog"> {{ nickname }} </a></div>-->
+				<router-link to="/auth"  class="nick-class"><div> {{ nickname }} </div></router-link>
 
-<!--				<router-link to="/jin-chat">-->
-<!--					<v-btn class="d-flex align-center" style="display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%">-->
+				<router-link to="/jin-chat">
+					<v-btn class="d-flex align-center" style="display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%">
 
-<!--						<v-img src="./src/views/pages/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>-->
+						<v-img src="./src/views/pages/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
 
-<!--						<div style="font-size: 60px; letter-spacing: 10px; margin-left: 45%">DJIN</div>-->
+						<div style="font-size: 60px; letter-spacing: 10px; margin-left: 45%">DJIN</div>
 
-<!--					</v-btn>-->
-<!--				</router-link>-->
+					</v-btn>
+				</router-link>
 
-<!--			</v-col>-->
+			</v-col>
 
-<!--			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)"><diagram/></v-col>-->
+			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)"><diagram/></v-col>
 
-<!--			<v-btn  style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%">-->
+			<v-btn  style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%">
 
-<!--				<div style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">-->
+				<div style="display: inline-block; width: 100%; height: 100%; background-color: #3A114D; border-radius: 30px">
 
-<!--					<div style="font-size: 35px; position: absolute; top: 7%; left: 50%"> HEADER HEADER	</div>-->
-<!--					<div style="font-size: 20px; position: absolute; top: 40%; left: 30%">-->
-<!--						<p> text text text text text text text </p>-->
-<!--						<p> text text text text text text text </p>-->
-<!--						<p> text text text text text text text </p>-->
-<!--						<p> text text text text text text text </p>-->
-<!--						<p> text text text text text text text </p></div>-->
-<!--					<v-img src="./src/views/pages/imgs/di.jpg" style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>-->
+					<div style="font-size: 35px; position: absolute; top: 7%; left: 50%"> HEADER HEADER	</div>
+					<div style="font-size: 20px; position: absolute; top: 40%; left: 30%">
+						<p> text text text text text text text </p>
+						<p> text text text text text text text </p>
+						<p> text text text text text text text </p>
+						<p> text text text text text text text </p>
+						<p> text text text text text text text </p></div>
+					<v-img src="./src/views/pages/imgs/di.jpg" style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>
 
-<!--				</div>-->
-<!--			</v-btn>-->
+				</div>
+			</v-btn>
 
-<!--			<v-col style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">-->
-<!--				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%">-->
-<!--					<div style="font-size: 40px"> ANIME</div>-->
-<!--				</v-btn>-->
+			<v-col style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> ANIME</div>
+				</v-btn>
 
-<!--				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%">-->
-<!--					<div style="font-size: 40px"> MANGA</div>-->
-<!--				</v-btn>-->
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%">
+					<div style="font-size: 40px"> MANGA</div>
+				</v-btn>
 
-<!--				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%">-->
-<!--					<div style="font-size: 40px"> FILMS</div>-->
-<!--				</v-btn>-->
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; right: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> FILMS</div>
+				</v-btn>
 
-<!--				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%">-->
-<!--					<div style="font-size: 40px"> SETTINGS</div>-->
-<!--				</v-btn>-->
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> SETTINGS</div>
+				</v-btn>
 
-<!--				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%">-->
-<!--					<div style="font-size: 25px"> COLLECTIVE VIEWING</div>-->
-<!--				</v-btn>-->
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; left: 35%; width: 30%; height: 30%">
+					<div style="font-size: 25px"> COLLECTIVE VIEWING</div>
+				</v-btn>
 
-<!--				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%">-->
-<!--					<div style="font-size: 40px"> MY CHOICE	</div>-->
-<!--				</v-btn>-->
+				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; bottom: 0; right: 0; width: 30%; height: 30%">
+					<div style="font-size: 40px"> MY CHOICE	</div>
+				</v-btn>
 
-<!--			</v-col>-->
+			</v-col>
 
 		</v-row>
 	</div>
@@ -139,7 +139,7 @@ onMounted(() => {
 
 <!--//todo need refactor -->
 <style scoped lang="scss">
- .grddd {
+ .fon {
 	 background: none;
    //background: linear-gradient(167deg, #000000, 70%, #3A114D);
  }

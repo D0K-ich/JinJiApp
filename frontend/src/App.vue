@@ -12,7 +12,7 @@ import {onMounted, ref} from "vue";
 const percent_loaded  = ref<number>(0)
 const ready = ref<boolean>(false)
 
-const grpc_client = NewGrpcAuthClient("localhost:11223")
+// const grpc_client = NewGrpcAuthClient("localhost:11223")
 
 onMounted(() => {
     CreateWebsocket("ws://localhost:54321/sync-timings")
@@ -33,7 +33,7 @@ import {NewGrpcAuthClient} from "./store/users-grpc";
 <style lang="scss">
   .main_styles {
     background: transparent !important;
-   width: 100% ;
+    width: 100% ;
     height: 100%;
   }
 </style>

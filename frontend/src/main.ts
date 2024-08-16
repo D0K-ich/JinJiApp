@@ -8,9 +8,6 @@ import * as directives from "vuetify/directives";
 
 import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
 import "@fortawesome/fontawesome-free/css/all.css";
-import {createPinia} from "pinia";
-import {createRouter} from "vue-router";
-import Router from "./router/router";
 import router from "./router/router"; // Ensure your project is capable of handling css files
 
 const app = createApp(App)
