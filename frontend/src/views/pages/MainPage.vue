@@ -73,10 +73,13 @@
 				</div>
 			</v-btn>
 
+
 			<v-col style="display: inline-block; width: 60em; height: 17em; position: absolute; top: 68%; left: 47%">
-				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%">
-					<div style="font-size: 40px"> ANIME</div>
-				</v-btn>
+				<router-link to="/anime">
+					<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 0; width: 30%; height: 30%">
+						<div style="font-size: 40px"> ANIME</div>
+					</v-btn>
+				</router-link>
 
 				<v-btn class="d-flex justify-center align-center" style="background: none; display:inline-block; position: absolute; top: 0; left: 35%; width: 30%; height: 30%">
 					<div style="font-size: 40px"> MANGA</div>
