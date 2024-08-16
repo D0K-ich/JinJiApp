@@ -41,7 +41,9 @@
 
 				<div class="achievements">{{ achievements_count }}</div>
 
-				<div class="nick-class"><a href="/reglog"> {{ nickname }} </a></div>
+				<router-link to="/auth"  class="nick-class">
+					<div> {{ nickname }} </div>
+				</router-link>
 
 				<router-link to="/jin-chat">
 					<v-btn class="d-flex align-center" style="display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%">

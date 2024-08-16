@@ -2,7 +2,13 @@ import {User} from "../models/users/users";
 import {defineStore} from 'pinia'
 import {Endpoints} from "../models/users/requests";
 import network from "../network/network";
-import {DialogDjin, MessageDjin, UserInfoResponse} from "../models/users/responses";
+import {
+    AuthResponse,
+    DialogDjin,
+    MessageDjin,
+    Status,
+    UserInfoResponse
+} from "../models/users/responses";
 
 interface State {
     User: User
@@ -60,28 +66,70 @@ export const UsersStore = defineStore('users', {
             })
         },
 
-        // SendMailCode(message : string) {
-        //     return new Promise((resolve, reject) => {
-        //         network.BillingPost<UserInfoResponse>(Endpoints.Users.Nuemesage, {
-        //             _module : "user",
-        //             _subject: "messages",
-        //             _action: "new",
-        //             user_message : message
-        //         })
-        //             .then((r) => {
-        //                 if (r.user != null) {
-        //                     this.User = r.user
-        //                     return resolve(r)
-        //                 }
-        //                 this.User = <User>{}
-        //                 resolve(r)
-        //             })
-        //             .catch((err) => {
-        //                 reject(err)
-        //             })
-        //     })
-        // },
+        SendMailCode(mail :string) : Promise<Status>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<Status>(Endpoints.Users.SendCode, {user_mail : mail})
+                    .then((r) => {
+                        resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
 
+        RecoverPass() : Promise<Status>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<Status>(Endpoints.Users.RecoverPass, {})
+                    .then((r) => {
+                        resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
+
+        NewProfile(mail :string,pass :string,nick :string) : Promise<AuthResponse>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<AuthResponse>(Endpoints.Users.NewUser, {user_mail : mail, user_pass : pass, user_nick :nick })
+                    .then((r) => {
+                        resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
+
+        OldUser(old_nick :string, old_password :string) : Promise<AuthResponse>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<AuthResponse>(Endpoints.Users.SerchProfile, {user_OldNick : old_nick, user_OldPassword : old_password})
+                    .then((r) => {
+                        resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
+
+        SendCodeCheck(code :number) : Promise<AuthResponse>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<AuthResponse>(Endpoints.Users.CheckCode, {user_code : code})
+                    .then((r) => {
+                        resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
 
         UpdateUser() { //todo
             return new Promise((resolve, reject) => {

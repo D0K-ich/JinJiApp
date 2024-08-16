@@ -49,7 +49,6 @@ const data = {
     genre_example_2.value,
     genre_example_3.value,
     genre_example_4.value,
-    genre_example_5.value,
   ],
   datasets: [
     {
@@ -59,9 +58,8 @@ const data = {
         genreColor(color_example_2.value),
         genreColor(color_example_3.value),
         genreColor(color_example_4.value),
-        genreColor(color_example_5.value),
       ],
-      data: [color_example_1.value, color_example_2.value, color_example_3.value, color_example_4.value, color_example_5.value],
+      data: [color_example_1.value, color_example_2.value, color_example_3.value, color_example_4.value],
     }
   ]
 }

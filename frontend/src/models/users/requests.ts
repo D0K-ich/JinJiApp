@@ -4,6 +4,12 @@ enum Users {
 	Block	 		= "users/block",
 	Activate		= "users/activate",
 
+	SendCode        = "notify/send_code",
+	CheckCode       = "code/check",
+	RecoverPass     = "pass/recover",
+	NewUser         = "new/user",
+	SerchProfile    = "serch/profile",
+
 	//Chat
 	NewMessage      = "messages/new",
 	DialogsList		= "dialogs/list",

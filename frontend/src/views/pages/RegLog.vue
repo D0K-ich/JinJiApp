@@ -18,38 +18,38 @@
 			<div v-if="reglog == 'REG'">
 				<v-col class="d-flex"  style="height: fit-content; width: calc(110vh - 100px)">
 					<div style="color: #cfd9df; font-size: 50px; height: fit-content" class="ml-8"> NAME </div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-2 ml-8 cusron"/>
+					<v-text-field v-model="name_user" variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-2 ml-8 cusron"/>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
 					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 1%" class="ml-8">
 						MAIL
 					</div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-4 ml-14 cursron"/>
-					<v-btn @click="" :height="50" :width="10"  class="mt-5 mr-3"> send </v-btn>
+					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-4 ml-14 cursron" v-model="mail"/>
+					<v-btn @click="inMail()" :height="50" :width="10"  class="mt-5 mr-3"> send </v-btn>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
 					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 1%" class="ml-8">
 						CODE
 					</div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-4 ml-12 cursron"/>
-					<v-btn :height="50" :width="10"  class="mt-5 mr-3"> check </v-btn>
+					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" v-model="code" class="mt-4 ml-12 cursron"/>
+					<v-btn @click="checkCode()" :height="50" :width="10"  class="mt-5 mr-3"> check </v-btn>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
 					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 1%" class="ml-8">
 						PASS
 					</div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-4 ml-15 cusron"/>
+					<v-text-field v-model="password" variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-4 ml-15 cusron"/>
 				</v-col>
-				<v-col style="width: fit-content; height: fit-content; margin-left: 86%" @click="lockIn = !lockIn">
-					<svg width="60" height="60" viewBox="0 0 70 70" fill="none" class="mt-2"
-					     xmlns="http://www.w3.org/2000/svg">
-						<path :class="{ 'noe' : lockIn }"
-						      d="M35 70C15.6695 70 0 54.3305 0 35C0 15.6695 15.6695 0 35 0C54.3305 0 70 15.6695 70 35C70 54.3305 54.3305 70 35 70ZM31.5 37.772V49H38.5V37.772C40.3424 36.9679 41.8518 35.554 42.7743 33.7679C43.6968 31.9818 43.9761 29.9326 43.5654 27.9648C43.1547 25.997 42.079 24.2306 40.5191 22.9626C38.9591 21.6947 37.0102 21.0025 35 21.0025C32.9898 21.0025 31.0409 21.6947 29.4809 22.9626C27.921 24.2306 26.8453 25.997 26.4346 27.9648C26.0239 29.9326 26.3032 31.9818 27.2257 33.7679C28.1482 35.554 29.6576 36.9679 31.5 37.772Z"
-						      fill="#DB00FF"/>
-						<path :class="{'noe' : !lockIn}"
-						      d="M35 70C15.6695 70 0 54.3305 0 35C0 15.6695 15.6695 0 35 0C54.3305 0 70 15.6695 70 35C70 54.3305 54.3305 70 35 70ZM35 63C42.4261 63 49.548 60.05 54.799 54.799C60.05 49.548 63 42.4261 63 35C63 27.5739 60.05 20.452 54.799 15.201C49.548 9.94999 42.4261 7 35 7C27.5739 7 20.452 9.94999 15.201 15.201C9.94999 20.452 7 27.5739 7 35C7 42.4261 9.94999 49.548 15.201 54.799C20.452 60.05 27.5739 63 35 63ZM31.5 37.772C29.6576 36.9679 28.1482 35.554 27.2257 33.7679C26.3032 31.9818 26.0239 29.9326 26.4346 27.9648C26.8453 25.997 27.921 24.2306 29.4809 22.9626C31.0409 21.6947 32.9898 21.0025 35 21.0025C37.0102 21.0025 38.9591 21.6947 40.5191 22.9626C42.079 24.2306 43.1547 25.997 43.5654 27.9648C43.9761 29.9326 43.6968 31.9818 42.7743 33.7679C41.8518 35.554 40.3424 36.9679 38.5 37.772V49H31.5V37.772Z"
-						      fill="#DB00FF"/>
-					</svg>
+				<v-col style="width: fit-content; height: fit-content; margin-left: 86%" @click="lockIn = !lockIn; newProfile()">
+						<svg width="60" height="60" viewBox="0 0 70 70" fill="none" class="mt-2"
+						     xmlns="http://www.w3.org/2000/svg">
+							<path :class="{'noe' : lockIn}"
+							      d="M35 70C15.6695 70 0 54.3305 0 35C0 15.6695 15.6695 0 35 0C54.3305 0 70 15.6695 70 35C70 54.3305 54.3305 70 35 70ZM31.5 37.772V49H38.5V37.772C40.3424 36.9679 41.8518 35.554 42.7743 33.7679C43.6968 31.9818 43.9761 29.9326 43.5654 27.9648C43.1547 25.997 42.079 24.2306 40.5191 22.9626C38.9591 21.6947 37.0102 21.0025 35 21.0025C32.9898 21.0025 31.0409 21.6947 29.4809 22.9626C27.921 24.2306 26.8453 25.997 26.4346 27.9648C26.0239 29.9326 26.3032 31.9818 27.2257 33.7679C28.1482 35.554 29.6576 36.9679 31.5 37.772Z"
+							      fill="#DB00FF"/>
+							<path :class="{'noe' : !lockIn}"
+							      d="M35 70C15.6695 70 0 54.3305 0 35C0 15.6695 15.6695 0 35 0C54.3305 0 70 15.6695 70 35C70 54.3305 54.3305 70 35 70ZM35 63C42.4261 63 49.548 60.05 54.799 54.799C60.05 49.548 63 42.4261 63 35C63 27.5739 60.05 20.452 54.799 15.201C49.548 9.94999 42.4261 7 35 7C27.5739 7 20.452 9.94999 15.201 15.201C9.94999 20.452 7 27.5739 7 35C7 42.4261 9.94999 49.548 15.201 54.799C20.452 60.05 27.5739 63 35 63ZM31.5 37.772C29.6576 36.9679 28.1482 35.554 27.2257 33.7679C26.3032 31.9818 26.0239 29.9326 26.4346 27.9648C26.8453 25.997 27.921 24.2306 29.4809 22.9626C31.0409 21.6947 32.9898 21.0025 35 21.0025C37.0102 21.0025 38.9591 21.6947 40.5191 22.9626C42.079 24.2306 43.1547 25.997 43.5654 27.9648C43.9761 29.9326 43.6968 31.9818 42.7743 33.7679C41.8518 35.554 40.3424 36.9679 38.5 37.772V49H31.5V37.772Z"
+							      fill="#DB00FF"/>
+						</svg>
 				</v-col>
 			</div>
 
@@ -58,15 +58,15 @@
 					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 2%" class="ml-16">
 						NIK
 					</div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cusron"/>
+					<v-text-field v-model="old_nick" variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cusron"/>
 				</v-col>
 				<v-col class="d-flex" cols="12" style="height: fit-content">
 					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 3%" class="ml-8">
-						PAROLE
+						PASS
 					</div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cursron"/>
+					<v-text-field v-model="old_password" variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cursron"/>
 				</v-col>
-				<v-col style="width: fit-content; height: fit-content; margin-left: 86%" @click="lockIn = !lockIn">
+				<v-col style="width: fit-content; height: fit-content; margin-left: 86%" @click="lockIn = !lockIn; oldUser()">
 					<svg width="60" height="60" viewBox="0 0 70 70" fill="none" style=" margin-top: 20%"
 					     xmlns="http://www.w3.org/2000/svg">
 						<path :class="{ 'noe' : lockIn }"
@@ -80,12 +80,20 @@
 			</div>
 			<div v-if="reglog == 'Forgot your password?'">
 				<v-col class="d-flex" style="height: fit-content; width: calc(110vh - 100px)">
-					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 2%" class="ml-10">
+					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 2%" class="ml-8">
 						EMAIL
 					</div>
-					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-14 cursron"/>
+					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" class="mt-7 ml-8 cursron"/>
+					<v-btn @click="inMail()" :height="50" :width="10"  class="mt-8 mr-3"> send </v-btn>
 				</v-col>
-				<v-col style="width: fit-content; height: fit-content; margin-left: 86%" @click="lockIn = !lockIn">
+				<v-col class="d-flex" cols="12" style="height: fit-content">
+					<div style="color: #cfd9df; font-size: 50px; height: fit-content;margin-top: 1%" class="ml-8">
+						CODE
+					</div>
+					<v-text-field variant="solo" bg-color="rgba(219, 0, 255, 1)" v-model="code" class="mt-4 ml-12 cursron"/>
+					<v-btn @click="checkCode()" :height="50" :width="10"  class="mt-6 mr-3"> check </v-btn>
+				</v-col>
+				<v-col style="width: fit-content; height: fit-content; margin-left: 86%" @click="lockIn = !lockIn; recoverParol()">
 					<svg width="60" height="100" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path :class="{ 'noe' : !lockIn }"
 						      d="M8.11029 0.983887L66.711 77.6199C67.6256 78.8153 68.1395 80.4367 68.1398 82.1276C68.1401 83.8185 67.6268 85.4403 66.7127 86.6363C65.7986 87.8322 64.5586 88.5043 63.2656 88.5047C61.9725 88.5051 60.7323 87.8337 59.8178 86.6384L44.8808 67.1011L33.3888 82.1249L19.9988 64.6149V75.7499C19.9988 76.8771 19.6564 77.9581 19.0469 78.7551C18.4374 79.5521 17.6107 79.9999 16.7488 79.9999C15.8868 79.9999 15.0602 79.5521 14.4507 78.7551C13.8412 77.9581 13.4988 76.8771 13.4988 75.7499V58.7499C13.4979 57.6666 13.1807 56.6247 12.612 55.8371C12.0434 55.0494 11.2662 54.5754 10.4393 54.5119C9.61232 54.4484 8.79806 54.8003 8.16284 55.4955C7.52761 56.1908 7.11938 57.177 7.02154 58.2526L6.99879 58.7499V62.9999C6.99879 64.1271 6.65638 65.2081 6.04689 66.0051C5.4374 66.8021 4.61075 67.2499 3.74879 67.2499C2.88684 67.2499 2.06019 66.8021 1.45069 66.0051C0.841201 65.2081 0.498792 64.1271 0.498792 62.9999V25.6594C0.363781 16.7892 2.89344 8.2033 7.54479 1.74464L8.11029 0.983887ZM8.89354 14.0314L8.72779 14.4989C7.75171 17.3186 7.17681 20.3473 7.03129 23.4366L6.99879 24.7499L6.99554 25.2599C7.03465 31.5673 8.86477 37.6307 12.1305 42.2726L12.7058 43.0589L33.3855 70.1016L42.5798 58.0826L8.89354 14.0314Z"
@@ -106,14 +114,64 @@
 <script setup lang="ts">
 
 import {ref} from "vue";
+import {UsersStore} from "../../store/user";
+import router from "../../router/router";
 
 const lockIn = ref(false)
 
 const reglog = ref<string>('LOG')
 
+const user_store = UsersStore()
+
+const mail = ref<string>('')
+
 const inMail = () => {
-	if ()
+	user_store.SendMailCode(mail.value)
 }
+
+const code = ref()
+
+const checkCode = () => {
+	user_store.SendCodeCheck(code.value)
+}
+
+
+
+const recoverParol = () => {
+	user_store.RecoverPass().then(() => {
+		lockIn.value = !lockIn.value
+		reglog.value = 'LOG'
+	})
+	setTimeout(() => {
+		lockIn.value = !lockIn.value
+		reglog.value = 'LOG'
+	}, 1000)
+}
+
+const password = ref<string>('')
+const name_user = ref<string>('')
+
+const newProfile = () => {
+	user_store.NewProfile(mail.value, password.value, name_user.value).then(() => {
+		router.push("/")
+	})
+	setTimeout(() => {
+		router.push("/")
+	}, 1000)
+}
+
+const old_password = ref<string>('')
+const old_nick = ref<string>('')
+
+const oldUser = () => {
+	user_store.OldUser(old_nick.value, old_password.value).then(() => {
+		router.push("/")
+	})
+	setTimeout(() => {
+		router.push("/")
+	}, 1000)
+}
+
 
 </script>
 
