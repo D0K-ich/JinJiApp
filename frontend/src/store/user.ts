@@ -5,7 +5,7 @@ import network from "../network/network";
 import {
     AuthResponse,
     DialogDjin,
-    MessageDjin,
+    MessageDjin, Search,
     Status,
     UserInfoResponse
 } from "../models/users/responses";
@@ -121,6 +121,19 @@ export const UsersStore = defineStore('users', {
         SendCodeCheck(code :number) : Promise<AuthResponse>  {
             return new Promise((resolve, reject) => {
                 network.UserPost<AuthResponse>(Endpoints.Users.CheckCode, {user_code : code})
+                    .then((r) => {
+                        resolve(r)
+                        return r
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        },
+
+        SearchUser(search :string) : Promise<Search>  {
+            return new Promise((resolve, reject) => {
+                network.UserPost<Search>(Endpoints.Users.CheckCode, {user_search : search})
                     .then((r) => {
                         resolve(r)
                         return r

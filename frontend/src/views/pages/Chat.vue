@@ -114,7 +114,7 @@ const images = ref<Image[]>([
 	{redirect_path: "/", path_image: './src/views/pages/imgs/nastroiki.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/favourites.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/stata.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/poisk.png'},
+	{redirect_path: "/anime", path_image: './src/views/pages/imgs/poisk.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/friends.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/profil.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/home.png'},
