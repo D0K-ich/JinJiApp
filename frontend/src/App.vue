@@ -12,8 +12,6 @@ import {onMounted, ref} from "vue";
 const percent_loaded  = ref<number>(0)
 const ready = ref<boolean>(false)
 
-// const grpc_client = NewGrpcAuthClient("localhost:11223")
-
 onMounted(() => {
     CreateWebsocket("ws://localhost:54321/sync-timings")
 
@@ -27,7 +25,6 @@ onMounted(() => {
 
 import {CloseWebsocket, CreateWebsocket, SendWsMessage} from "./network/websocket";
 import Preloader from "./views/preloader/Preloader.vue";
-import {NewGrpcAuthClient} from "./store/users-grpc";
 </script>
 
 <style lang="scss">

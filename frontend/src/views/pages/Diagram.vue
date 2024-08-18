@@ -1,10 +1,13 @@
 <template>
-  <Bar :data="data" :options="options"/>
+<!--  <Bar :data="data" :options="options"/>-->
+	<DiagramBar/>
+
 </template>
 
 <script setup lang="ts">
 import {ref} from "vue"
-import { Bar } from 'vue-chartjs'
+import ChartDataLabels from 'chartjs-plugin-datalabels'
+
 import {
   Chart as ChartJS,
   Title,
@@ -14,8 +17,7 @@ import {
   CategoryScale,
   LinearScale,
 } from 'chart.js'
-
-import ChartDataLabels from 'chartjs-plugin-datalabels'
+import DiagramBar from "./DiagramBar.vue";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ChartDataLabels,)
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend,)
@@ -24,13 +26,11 @@ const genre_example_1  = ref<string>('sosat1')
 const genre_example_2  = ref<string>('sosat2')
 const genre_example_3  = ref<string>('sosat3')
 const genre_example_4  = ref<string>('sosat4')
-const genre_example_5  = ref<string>('sosat5')
 
 const color_example_1  = ref<number>(20)
 const color_example_2  = ref<number>(40)
 const color_example_3  = ref<number>(60)
 const color_example_4  = ref<number>(80)
-const color_example_5  = ref<number>(100)
 
 const genreColor = (sas :number):string  => {
   switch(true) {

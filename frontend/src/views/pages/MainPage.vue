@@ -6,7 +6,7 @@
 
 				<div class="left-line"/>
 
-				<v-img src="./src/views/pages/imgs/kot.jpg" style="max-width: 15em; max-height: 10em" />
+				<img src="./imgs/kot.jpg" style="max-width: 15em; max-height: 10em" />
 
 				<div class="right-line"/>
 
@@ -279,7 +279,6 @@ onMounted(() => {
 	cursor: pointer;
 	transition: transform 0.3s ease-in-out;
 	display: inline-block;
-	position: absolute;
 	top: 31%;
 	right: 6%;
 	color: #DB00FF;
