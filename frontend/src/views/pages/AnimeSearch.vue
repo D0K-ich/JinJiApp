@@ -45,6 +45,7 @@
 							{{ item.genre }}
 						</v-card-text>
 
+
 						<v-card-text class="ml-3 d-flex align-center" style="font-size: 15px; height: 2vh; width: fit-content; border: #cfd9df 1px solid">
 							{{ item.rating }}
 						</v-card-text>
@@ -119,7 +120,7 @@ const show_options  = ref(true)
 const images = ref<Image[]>([
 	{redirect_path: "/", path_image: './src/views/pages/imgs/nastroiki.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/favourites.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/stata.png'},
+	{redirect_path: "/AIselection", path_image: './src/views/pages/imgs/stata.png'},
 	{redirect_path: "/anime", path_image: './src/views/pages/imgs/poisk.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/friends.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/profil.png'},

@@ -6,7 +6,7 @@ import {
     AuthResponse,
     DialogDjin,
     MessageDjin, Search,
-    Status,
+    Status, Time,
     UserInfoResponse
 } from "../models/users/responses";
 
@@ -130,6 +130,7 @@ export const UsersStore = defineStore('users', {
                     })
             })
         },
+
 
         SearchUser(search :string) : Promise<Search>  {
             return new Promise((resolve, reject) => {

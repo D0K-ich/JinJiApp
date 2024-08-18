@@ -17,6 +17,7 @@
 					<input type="checkbox" v-model="is_checked" style="display: none;">
 				</div>
 
+
 				<v-btn class="textAI"><a :href="textAiChecked().href">{{ textAiChecked().name }}</a></v-btn>
 
 				<svg
@@ -127,8 +128,8 @@ const user_store    = UsersStore()
 const iconPath      = computed(() => mdiAutorenew)
 
 const textAiChecked = () : {name : string, href : string} => {//todo
-	if (!is_checked.value) {return {name : 'Your AI selection', href : ""}}
-	return {name : 'Our AI selection', href : ""}
+	if (!is_checked.value) {return {name : 'Your AI selection', href : "/AIselection"}}
+	return {name : 'Our AI selection', href : "/AIselection"}
 }
 
 onMounted(() => {

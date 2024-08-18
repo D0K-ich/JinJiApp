@@ -59,3 +59,7 @@ export interface Timing {
     new_duration: string
     last_duration: string
 }
+
+export interface AiAnime {
+    img_path: string
+}
