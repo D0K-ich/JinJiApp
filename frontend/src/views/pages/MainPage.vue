@@ -1,21 +1,20 @@
 <template>
-	<div class="fon d-flex" style="height: 100%; width: 100%">
+	<div class="d-flex" style="height: 100%; width: 100%; background: none">
 		<v-row no-gutters>
 
-			<v-col cols="4" class="d-flex" style="height: 36em">
+			<v-col cols="4" class="d-inline-flex" style="max-height: 36em">
 
-				<div class="left-line"/>
+				<div class="left-line ml-3 mt-3"/>
 
-				<img src="./imgs/kot.jpg" style="max-width: 15em; max-height: 10em" />
+<!--				<img src="./imgs/kot.jpg" style="max-width: 15em; max-height: 10em; display: inline-flex"/>-->
 
-				<div class="right-line"/>
 
-				<div class="custom-switch" @click="is_checked = !is_checked">
+
+				<div class="custom-switch">
 					<div class="custom-switch-track">
 						<div class="custom-switch-thumb" :class="{ 'is-checked': is_checked }"></div>
 					</div>
 					<input type="checkbox" v-model="is_checked" style="display: none;">
-
 				</div>
 
 				<v-btn class="textAI"><a :href="textAiChecked().href">{{ textAiChecked().name }}</a></v-btn>
@@ -28,6 +27,7 @@
 					type="mdi" class="arrows">
 					<path :d="iconPath"></path>
 				</svg>
+				<div class="right-line"/>
 			</v-col>
 
 			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
@@ -55,7 +55,7 @@
 
 			</v-col>
 
-			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)"><diagram/></v-col>
+			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)"><DiagramBar/></v-col>
 
 			<v-btn  style="background: #3A114D; display: inline-block; width: 50em; height: 23em; position: absolute; top: 65%; left: 1%">
 
@@ -101,7 +101,7 @@
 					<div style="font-size: 40px"> MY CHOICE	</div>
 				</v-btn>
 
-			</v-col>
+			</v-col>-->
 
 		</v-row>
 	</div>
@@ -113,6 +113,7 @@ import {onMounted, ref, computed} from "vue";
 import {mdiAutorenew} from '@mdi/js';
 import {UsersStore} from "../../store/user";
 import Diagram from "./Diagram.vue";
+import DiagramBar from "./DiagramBar.vue";
 
 //todo rename
 const level                 = ref<number>(0)
@@ -211,29 +212,42 @@ onMounted(() => {
 }
 
 .right-line {
-	width: 40%;
-	height: 35%;
+	width: 40em;
+	height: 10em;
+
+	align-self: flex-end;
+	display: inline-block;
+
 	border-bottom-right-radius: 30px;
 	border-bottom: #DB00FF 3px solid;
 	border-right: #DB00FF 3px solid;
 }
 
 .left-line {
-	width: 40%;
-	height: 35%;
+	width: 40em;
+	height: 10em;
+	align-self: flex-start;
+
 	border-top-left-radius: 30px;
 	border-top: #DB00FF 3px solid;
 	border-left: #DB00FF 3px solid;
 }
 
-.custom-switch {
+.custom-switch-wrapper {
 	display: inline-flex;
-	align-items: center;
+	position: relative;
+	max-height: 30px;
 	cursor: pointer;
-	position: absolute;
-	top: 10%;
-	left: 5%;
+
+	margin-top: 7em;
+
 	transform: rotate(90deg);
+}
+
+.custom-switch {
+	//position: absolute;
+	max-width: 70px;
+	height: 34px;
 }
 
 .custom-switch-track {
@@ -241,7 +255,6 @@ onMounted(() => {
 	height: 34px;
 	background-color: #310E37;
 	border-radius: 34px;
-	position: relative;
 }
 
 .custom-switch-thumb {
@@ -249,9 +262,6 @@ onMounted(() => {
 	height: 30px;
 	background-color: #DB00FF;
 	border-radius: 50%;
-	position: absolute;
-	top: 2px;
-	left: 2px;
 	transition: transform 0.3s;
 }
 

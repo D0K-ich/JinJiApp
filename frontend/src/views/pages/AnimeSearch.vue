@@ -85,13 +85,10 @@
 
 			</router-link>
 
-			<router-link to="//jin-chat">
+			<router-link to="/jin-chat">
 				<v-img @click="show_options = !show_options; startRotate()" class="mt-10" :class="is_rotating ? 'rotate' : '' " src="./src/views/pages/imgs/Djinneir.png"/>
 			</router-link>
 		</v-col>
-
-
-
 
 	</v-row>
 </template>
