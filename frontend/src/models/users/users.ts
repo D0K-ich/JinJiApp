@@ -31,6 +31,30 @@ export interface Message {
     time: number
 }
 
+export interface AnimeDescription {
+    content: string
+    img_path: string
+    rating: number
+    age: number
+    genre: string[]
+}
+
+export interface VoiceActing {
+    voice_acting: string[]
+}
+
+export interface Genre {
+    genre: string[]
+}
+
+export interface Tipe {
+    tipe: string[]
+}
+
+export interface Status {
+    status: string[]
+}
+
 export interface Timing {
     new_duration: string
     last_duration: string

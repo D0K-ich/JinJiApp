@@ -19,7 +19,9 @@ export interface Status {
     status      : string
 }
 
-
+export interface Search {
+    status      :string
+}
 
 
 export interface AuthResponse {
