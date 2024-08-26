@@ -13,7 +13,7 @@ const percent_loaded  = ref<number>(0)
 const ready = ref<boolean>(false)
 
 onMounted(() => {
-    CreateWebsocket("ws://localhost:54321/sync-timings")
+    // CreateWebsocket("ws://localhost:54321/sync-timings")
 
     // setInterval(() => {
     //     percent_loaded.value += Math.floor( Math.random() * 10)
@@ -23,8 +23,8 @@ onMounted(() => {
     // }, 100)
 })
 
-import {CloseWebsocket, CreateWebsocket, SendWsMessage} from "./network/websocket";
-import Preloader from "./views/preloader/Preloader.vue";
+// import {CloseWebsocket, CreateWebsocket, SendWsMessage} from "./network/websocket";
+// import Preloader from "./views/preloader/Preloader.vue";
 </script>
 
 <style lang="scss">
