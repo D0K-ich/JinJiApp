@@ -11,3 +11,9 @@ dev-start:
 	@echo "Executing test application..."
 	@echo "------------------------------------"
 	wails dev
+
+start:
+	@echo "===================================="
+	@echo "Executing test application..."
+	@echo "------------------------------------"
+	cd ./frontend && npm run start
