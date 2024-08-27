@@ -11,7 +11,7 @@ export default createRouter ({
         { path: '/', component: MainPage},
         { path: '/jin-chat', component: Chat },
         { path: '/auth', component: RegLog},
-        { path: '/search-anime', component: AnimeSearch}
+        { path: '/search-anime', component: AnimeSearch},
         { path: '/AIselection', component: Aiselection}
     ]
 })

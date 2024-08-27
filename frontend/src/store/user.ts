@@ -6,7 +6,7 @@ import {
     AuthResponse,
     DialogDjin,
     MessageDjin, Search,
-    Status, Time,
+    Status,
     UserInfoResponse
 } from "../models/users/responses";
 

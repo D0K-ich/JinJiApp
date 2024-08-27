@@ -1,7 +1,7 @@
 <template>
 	<v-row no-gutters>
 
-		<v-col cols="2" style="border: #cfd9df 1px solid">
+		<v-col cols="2">
 			<div class="ml-10 mt-8">
 				<svg width="54" height="50" viewBox="0 0 44 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M0 21.0526H9.77778V40H0V21.0526ZM34.2222 12.6316H44V40H34.2222V12.6316ZM17.1111 0H26.8889V40H17.1111V0Z" fill="#DB00FF"/>
@@ -10,7 +10,7 @@
 
 			<v-btn class="ml-6 mt-3 textAI"><a :href="textAiChecked().href">{{ textAiChecked().name }}</a></v-btn>
 
-			<div class="ml-6 mt-16 custom-switch">
+			<div class="ml-6 mt-16 custom-switch" @click="is_checked = !is_checked">
 				<div class="custom-switch-track">
 					<div class="custom-switch-thumb" :class="{ 'is-checked': is_checked }"></div>
 				</div>
@@ -18,32 +18,19 @@
 			</div>
 
 
-
+				<Filtres />
 
 		</v-col>
 
 
 
-		<v-col cols="9" style="border: #cfd9df 1px solid">
+		<v-col cols="9">
 
-			<v-virtual-scroll style="scrollbar-width: none; border:#cfd9df 1px solid " :items="ai_anime" :width="1436" :height="991">
 
-				<template v-slot:default="{item}" class="d-flex">
-				<v-card class="d-flex" :height="300" style="background: none; border: #cfd9df 1px solid">
+			<v-virtual-scroll class="Vvs" style="scrollbar-width: none" :items="ai_anime" :width="1436" :height="991">
 
-					<v-card-text class=" d-flex  align-center" style="font-size: 15px; height: 30vh; width: 30vh; border: #cfd9df 1px solid">
-						{{ item.img_path }}
-					</v-card-text>
-
-					<v-card-text class= "d-flex align-center" style=" font-size: 15px; height: 30vh; width: fit-content; border: #cfd9df 1px solid">
-						{{ item.img_path }}
-					</v-card-text>
-
-					<v-card-text class="d-flex align-center" style="font-size: 15px; height: 30vh; width: fit-content; border: #cfd9df 1px solid">
-						{{ item.img_path }}
-					</v-card-text>
-
-				</v-card>
+				<template v-slot:default="{item}">
+					<AiScroll :ai_anime="item" />
 				</template>
 
 			</v-virtual-scroll>
@@ -54,7 +41,8 @@
 
 
 
-		<v-col cols="1" style="border: #cfd9df 1px solid">
+
+		<v-col cols="1">
 
 			<router-link v-for="(image, idx) in images" :key="idx" :to="image.redirect_path">
 
@@ -78,14 +66,18 @@
 
 
 import {ref} from "vue";
-import {AiAnime, Image} from "../../models/users/users";
+import {AiAnime, Image, TimePost} from "../../models/users/users";
+import AiScroll from "./AiScroll.vue";
+import Filtres from "./Filtres.vue";
+
+const scroll = ref<string>('')
 
 const show_options  = ref(true)
 const images = ref<Image[]>([
 	{redirect_path: "/", path_image: './src/views/pages/imgs/nastroiki.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/favourites.png'},
 	{redirect_path: "/AIselection", path_image: './src/views/pages/imgs/stata.png'},
-	{redirect_path: "/anime", path_image: './src/views/pages/imgs/poisk.png'},
+	{redirect_path: "/search-anime", path_image: './src/views/pages/imgs/poisk.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/friends.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/profil.png'},
 	{redirect_path: "/", path_image: './src/views/pages/imgs/home.png'},
@@ -104,6 +96,7 @@ const textAiChecked = () : {name : string, href : string} => {//todo
 	return {name : 'Our AI selection', href : "/AIselection"}
 }
 
+
 const ai_anime = ref<AiAnime[]>([])
 
 </script>
@@ -112,19 +105,7 @@ const ai_anime = ref<AiAnime[]>([])
 
 <style scoped lang="scss">
 
-.custom-switch-wrapper {
-	display: inline-flex;
-	position: relative;
-	max-height: 30px;
-	cursor: pointer;
-
-	margin-top: 7em;
-
-	transform: rotate(90deg);
-}
-
 .custom-switch {
-	//position: absolute;
 	max-width: 70px;
 	height: 34px;
 }
@@ -161,5 +142,10 @@ const ai_anime = ref<AiAnime[]>([])
 	font-size: 20px
 }
 
+.Vvs * {
+	display: inline-block;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
 
 </style>
