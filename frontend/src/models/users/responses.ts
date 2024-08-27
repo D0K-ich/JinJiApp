@@ -23,6 +23,10 @@ export interface Search {
     status      :string
 }
 
+export interface Time {
+    time        :number
+}
+
 
 export interface AuthResponse {
     user_id     : string

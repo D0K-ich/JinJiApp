@@ -131,6 +131,7 @@ export const UsersStore = defineStore('users', {
             })
         },
 
+
         SearchUser(search :string) : Promise<Search>  {
             return new Promise((resolve, reject) => {
                 network.UserPost<Search>(Endpoints.Users.CheckCode, {user_search : search})
