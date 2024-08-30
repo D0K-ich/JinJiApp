@@ -15,7 +15,7 @@ class Network {
         headers : <RawAxiosRequestHeaders> {
             'Content-Type'	: 'application/json; charset=UTF-8',
             'x-access-token': config.adminToken(),
-        }
+        },
     })
 
     UserPost<T>(path : string, payload : Record<string, any>, timeout? : number) {

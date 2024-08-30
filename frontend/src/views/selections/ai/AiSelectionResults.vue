@@ -1,5 +1,3 @@
-
-
 <template>
 	<v-card class="mt-4 mr-12 ml-2 d-inline-block justify-center" :height="300" :width="300" style="background: none">
 
@@ -19,7 +17,7 @@
 
 <script setup lang="ts">
 
-import {AiAnime} from "../../models/users/users";
+import {AiAnime} from "../../../models/users/users";
 
 defineProps<{
 	ai_anime: AiAnime

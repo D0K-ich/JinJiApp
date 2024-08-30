@@ -18,7 +18,7 @@
 
 					<v-col cols="12" style="height: 75%">
 
-						<img src="./imgs/kot.jpg" class="ml-10 mt-14" style="width: 17em; height: 14em"/>
+						<img src="../../imgs/kot.jpg" class="ml-10 mt-14" style="width: 17em; height: 14em"/>
 
 						<svg
 							:width="100"
@@ -33,30 +33,30 @@
 				</v-row>
 			</v-col>
 
-<!--			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">-->
-<!--				<v-img src="./src/views/pages/imgs/fhkg.jpg" class="avatar mt-4"/>-->
+			<v-col cols="4" class="d-flex" style="position: relative; height: 36em">
+				<v-img src="./src/imgs/fhkg.jpg" class="avatar mt-4"/>
 
-<!--				<v-btn class="level-subscription" style="margin-top: 3%">lvl. {{ level }}</v-btn>-->
+				<v-btn class="level-subscription" style="margin-top: 3%">lvl. {{ level }}</v-btn>
 
-<!--				<v-btn class="level-subscription" style="position: absolute; top: 17%; right: 0">sub. {{ subscription }}</v-btn>-->
+				<v-btn class="level-subscription" style="position: absolute; top: 17%; right: 0">sub. {{ subscription }}</v-btn>
 
-<!--				<v-img src="./src/views/pages/imgs/goblet.png" height="100" width="100" class="goblet" style="position: absolute; top: 35%; right: 34%"/>-->
+				<v-img src="./src/imgs/goblet.png" height="100" width="100" class="goblet" style="position: absolute; top: 35%; right: 34%"/>
 
-<!--				<div class="achievements">{{ achievements_count }}</div>-->
+				<div class="achievements">{{ achievements_count }}</div>
 
-<!--				<router-link to="/auth"  class="nick-class"><div> {{ nickname }} </div></router-link>-->
+				<router-link to="/auth"  class="nick-class"><div> {{ nickname }} </div></router-link>
 
-<!--				<router-link to="/jin-chat">-->
-<!--					<v-btn class="d-flex align-center" style="display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%">-->
+				<router-link to="/jin-chat">
+					<v-btn class="d-flex align-center" style="display: inline-block; width: 28em; height: 7em; position: absolute; bottom: 0; left: 18%">
 
-<!--						<v-img src="./src/views/pages/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>-->
+						<v-img src="./src/imgs/Djinneir.png" style="width: 20%; height: 70%; display: inline-block; position: absolute; left: 6%;"/>
 
-<!--						<div style="font-size: 60px; letter-spacing: 10px; margin-left: 45%">DJIN</div>-->
+						<div style="font-size: 60px; letter-spacing: 10px; margin-left: 45%">DJIN</div>
 
-<!--					</v-btn>-->
-<!--				</router-link>-->
+					</v-btn>
+				</router-link>
 
-<!--			</v-col>-->
+			</v-col>
 
 <!--			<v-col cols="4" class="d-flex" style="height: 60%; position: relative; top: 2%; transform: rotate(90deg)"><DiagramBar/></v-col>-->
 
@@ -71,7 +71,7 @@
 <!--						<p> text text text text text text text </p>-->
 <!--						<p> text text text text text text text </p>-->
 <!--						<p> text text text text text text text </p></div>-->
-<!--					<v-img src="./src/views/pages/imgs/di.jpg" style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>-->
+<!--					<v-img src="./src/imgs/di.jpg" style="width: 20%; height: 70%; display: inline-block; position: absolute; top: 11%; left: 4%; border: #DB00FF 1px solid"/>-->
 
 <!--				</div>-->
 <!--			</v-btn>-->
@@ -115,7 +115,6 @@
 import {onMounted, ref, computed} from "vue";
 import {mdiAutorenew} from '@mdi/js';
 import {UsersStore} from "../../store/user";
-import DiagramBar from "./DiagramBar.vue";
 
 //todo rename
 const level                 = ref<number>(0)

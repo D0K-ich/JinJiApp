@@ -51,7 +51,7 @@
 			</router-link>
 
 			<router-link to="/jin-chat">
-				<v-img @click="show_options = !show_options; startRotate()" class="mt-10" :class="is_rotating ? 'rotate' : '' " src="./src/views/pages/imgs/Djinneir.png"/>
+				<v-img @click="show_options = !show_options; startRotate()" class="mt-10" :class="is_rotating ? 'rotate' : '' " src="./src/imgs/Djinneir.png"/>
 			</router-link>
 
 		</v-col>
@@ -66,21 +66,21 @@
 
 
 import {ref} from "vue";
-import {AiAnime, Image, TimePost} from "../../models/users/users";
-import AiScroll from "./AiScroll.vue";
-import Filtres from "./Filtres.vue";
+import {AiAnime, Image} from "../../../models/users/users";
+import AiSelectionResults from "AiSelectionResults.vue";
+import Filtres from "../../general/Filtres.vue";
 
 const scroll = ref<string>('')
 
 const show_options  = ref(true)
 const images = ref<Image[]>([
-	{redirect_path: "/", path_image: './src/views/pages/imgs/nastroiki.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/favourites.png'},
-	{redirect_path: "/AIselection", path_image: './src/views/pages/imgs/stata.png'},
-	{redirect_path: "/search-anime", path_image: './src/views/pages/imgs/poisk.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/friends.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/profil.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/home.png'},
+	{redirect_path: "/", path_image: './src/imgs/nastroiki.png'},
+	{redirect_path: "/", path_image: './src/imgs/favourites.png'},
+	{redirect_path: "/AIselection", path_image: './src/imgs/stata.png'},
+	{redirect_path: "/search-anime", path_image: './src/imgs/poisk.png'},
+	{redirect_path: "/", path_image: './src/imgs/friends.png'},
+	{redirect_path: "/", path_image: './src/imgs/profil.png'},
+	{redirect_path: "/", path_image: './src/imgs/home.png'},
 ])
 
 const is_rotating   = ref<boolean>(false)

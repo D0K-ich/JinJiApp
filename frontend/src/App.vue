@@ -1,8 +1,10 @@
 <template>
 <!--	<preloader :percent_loaded=percent_loaded />-->
-	<v-app class="main_styles">
-		<router-view/>
-	</v-app>
+<!--	<v-app class="main_styles">-->
+<!--		<router-view/>-->
+<!--	</v-app>-->
+
+	<error502/>
 </template>
 
 <script lang="ts" setup>
@@ -22,10 +24,10 @@ import { EaselPlugin } from "gsap/EaselPlugin";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 
-
 gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase);
 
 import {onMounted, ref} from "vue";
+import Error502 from "./views/general/errors/Error502.vue";
 
 const percent_loaded  = ref<number>(0)
 const ready = ref<boolean>(false)

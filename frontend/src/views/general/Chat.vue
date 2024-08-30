@@ -41,7 +41,7 @@
 
 						<template v-slot:append-inner>
 							<v-btn @click="sendMessage">
-								<v-img src="./src/views/pages/imgs/lapa.png" :height="30" :width="30"/>
+								<v-img src="./src/imgs/lapa.png" :height="30" :width="30"/>
 							</v-btn>
 						</template>
 
@@ -58,7 +58,7 @@
 
 				</router-link>
 
-				<v-img @click="show_options = !show_options; startRotate()" class="mt-10" :class="is_rotating ? 'rotate' : '' " src="./src/views/pages/imgs/Djinneir.png"/>
+				<v-img @click="show_options = !show_options; startRotate()" class="mt-10" :class="is_rotating ? 'rotate' : '' " src="./src/imgs/Djinneir.png"/>
 
 			</v-col>
 		</v-row>
@@ -72,6 +72,7 @@ import {onMounted, ref} from 'vue'
 import { UsersStore } from '../../store/user';
 import { Image, Message } from '../../models/users/users';
 import { DialogDjin } from '../../models/users/responses';
+import axios from "axios";
 
 register()
 
@@ -111,13 +112,13 @@ const sendMessage = () => {
 
 //todo
 const images = ref<Image[]>([
-	{redirect_path: "/", path_image: './src/views/pages/imgs/nastroiki.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/favourites.png'},
-	{redirect_path: "/AIselection", path_image: './src/views/pages/imgs/stata.png'},
-	{redirect_path: "/search-anime", path_image: './src/views/pages/imgs/poisk.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/friends.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/profil.png'},
-	{redirect_path: "/", path_image: './src/views/pages/imgs/home.png'},
+	{redirect_path: "/", path_image: './src/imgs/nastroiki.png'},
+	{redirect_path: "/", path_image: './src/imgs/favourites.png'},
+	{redirect_path: "/AIselection", path_image: './src/imgs/stata.png'},
+	{redirect_path: "/search-anime", path_image: './src/imgs/poisk.png'},
+	{redirect_path: "/", path_image: './src/imgs/friends.png'},
+	{redirect_path: "/", path_image: './src/imgs/profil.png'},
+	{redirect_path: "/", path_image: './src/imgs/home.png'},
 ])
 
 onMounted(() => {
