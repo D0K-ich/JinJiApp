@@ -1,12 +1,16 @@
 import {defineStore} from "pinia";
-import {User} from "../models/users/users";
+import {ConnectionState, ConnectionStateName} from "./events";
 
 interface State {
-	isConnect: boolean
+	connection	: ConnectionState
 }
 
 export const StateStore = defineStore('state', {
 	state: (): State => ({
-		isConnect: false,
+		connection: {} as ConnectionState,
 	}),
+
+	getters : {
+		isConnected	: (state : State) : boolean => {return state.connection && state.connection.Name == ConnectionStateName.Online}
+	}
 })

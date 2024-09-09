@@ -1,29 +1,18 @@
 <template>
-	<v-overlay
-		:model-value="!state_store.isConnect"
-		autofocus
-		:absolute="true"
-		:persistent="true"
-		scroll-strategy="block"
-		content-class="conn-state-overlay"
-		scrim="black"
-		opacity="0.85"
-		class="ov"
-	>
-		<div class="overlay-content fill-height" style="min-height: 100vh; width: 100% !important;">
-			<div style="margin-left: 10%; width: 100%">ОШИБКА 502</div>
-<!--			<v-row class="fill-height" no-gutters style="width: 100% !important;">-->
-<!--				<v-col cols="6" class="d-flex align-center justify-center" style="min-height: 100%">-->
+	<div style="width: 100%; height: 100vh; background-color: #211b36">
+		<v-row class="fill-height d-flex" no-gutters>
+			<v-col cols="6" class="d-flex align-center justify-center" style="min-height: 100%">
+				<div>Ошибка 502</div>
+			</v-col>
 
-<!--				</v-col>-->
 
-<!--				<v-col cols="6" class="d-flex align-center justify-center" style="min-height: 100%">-->
-<!--					<div>ЧТО-ТО РАБОТАЕТ НЕ ТАК, КАК НУЖНО</div>-->
-<!--				</v-col>-->
-<!--			</v-row>-->
-		</div>
-	</v-overlay>
+			<v-col cols="6" class="d-flex align-center justify-center" style="min-height: 100%">
+				<div class="d-flex align-center justify-center">ЧТО-ТО РАБОТАЕТ НЕ ТАК, КАК НУЖНО</div>
+			</v-col>
 
+			<server/>
+		</v-row>
+	</div>
 
 </template>
 

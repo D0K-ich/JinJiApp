@@ -1,0 +1,6 @@
+### GET request to example server
+GET https://r170102.anilibria.one/kimetsu-no-yaiba/1.1080.d2abb5726c3f2e44.mp4?hash=1a7d47d98e44f4e828b52099b692a24a&hash2=4b0a455e408550a07fbef76ee79a1926
+Host: r170102.anilibria.one
+User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36
+
+###

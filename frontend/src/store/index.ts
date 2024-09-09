@@ -1,5 +1,7 @@
-import {createPinia}		from 'pinia'
+import {createPinia} from 'pinia'
+import {CreateWebsocket} from "../network/websocket";
 export default createPinia()
 
-export {}
+CreateWebsocket()
+
 // Network.

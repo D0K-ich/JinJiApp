@@ -4,13 +4,14 @@
     <div id="input" class="input-box">
       <input id="name" v-model="data.name" autocomplete="off" class="input" type="text"/>
       <button class="btn" @click="greet">Greet</button>
+      <button class="btn" @click="send">Send</button>
     </div>
   </main>
 </template>
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import {Greet} from '../../../wailsjs/go/main/App'
+import {Greet, SendRequest} from '../../../wailsjs/go/main/App'
 
 const data = ref<{name : string, resultText : string}>({
   name: "",
@@ -22,6 +23,12 @@ function greet() {
   Greet(data.value.name).then(result => {
     data.value.resultText = result
   })
+}
+
+const send = () => {
+	SendRequest({
+		convertValues(a: any, classs: any, asMap?: boolean): any {
+		}, timeout : 30000, body : null, url : "", headers : <Record<string, string>>{}, method : "POST"})
 }
 </script>
 

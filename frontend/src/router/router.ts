@@ -6,6 +6,7 @@ import AnimeSearch from "../views/search/AnimeSearch.vue";
 import AiSelection from "../views/selections/ai/AiSelection.vue";
 import NotFound from "../views/general/errors/NotFound.vue";
 import Error502 from "../views/general/errors/Error502.vue";
+import Pleer from "../views/general/Pleer.vue";
 
 
 export default createRouter ({
@@ -15,8 +16,8 @@ export default createRouter ({
         { path: '/jin-chat',        component: Chat},
         { path: '/auth',            component: RegLog},
         { path: '/search-anime',    component: AnimeSearch},
-        { path: '/502',             component: Error502},
         { path: '/AiSelection',     component: AiSelection},
+        { path: '/revise',          component: Pleer},
 
         {path: '/:pathMatch(.*)*',  component: NotFound},
 

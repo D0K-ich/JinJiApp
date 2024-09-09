@@ -67,7 +67,6 @@
 
 import {ref} from "vue";
 import {AiAnime, Image} from "../../../models/users/users";
-import AiSelectionResults from "AiSelectionResults.vue";
 import Filtres from "../../general/Filtres.vue";
 
 const scroll = ref<string>('')

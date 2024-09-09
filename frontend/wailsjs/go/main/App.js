@@ -9,3 +9,7 @@ export function Greet(arg1) {
 export function Hi(arg1) {
   return window['go']['main']['App']['Hi'](arg1);
 }
+
+export function SendRequest(arg1) {
+  return window['go']['main']['App']['SendRequest'](arg1);
+}

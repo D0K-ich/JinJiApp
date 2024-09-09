@@ -18,8 +18,11 @@ class Config {
         this.targetHost		= this.hosts[this.targetBuild]
     }
 
-    adminHttpUrl()	: string {return `http://${this.targetHost}/`}
-    adminToken()	: string {return this._adminToken}
+    serverHttpUrl()	: string {return `http://${this.targetHost}/`}
+    serverWsUrl() : string {return `ws://localhost:54321/ws`}
+    serverAccessToken()	: string {return this._adminToken}
+
+
 }
 
 const config : Config = new Config()

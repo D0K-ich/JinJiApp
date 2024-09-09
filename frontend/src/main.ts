@@ -8,7 +8,7 @@ import * as directives from "vuetify/directives";
 
 import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
 import "@fortawesome/fontawesome-free/css/all.css";
-import router from "./router/router"; // Ensure your project is capable of handling css files
+import router from "./router/router";
 
 const app = createApp(App)
 
@@ -65,6 +65,7 @@ const vuetify = createVuetify({
 });
 
 app.use(vuetify)
-app.use(router)
 app.use(pinia)
+app.use(router)
+
 app.mount("#app")

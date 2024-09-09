@@ -10,11 +10,11 @@ import {config} from "./config";
 class Network {
 
     private adminApi		: AxiosInstance = axios.create({
-        baseURL : config.adminHttpUrl(),
+        baseURL : config.serverHttpUrl(),
         timeout : 30000,
         headers : <RawAxiosRequestHeaders> {
             'Content-Type'	: 'application/json; charset=UTF-8',
-            'x-access-token': config.adminToken(),
+            'x-access-token': config.serverAccessToken(),
         },
     })
 
