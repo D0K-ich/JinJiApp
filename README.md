@@ -1,3 +1,3 @@
 cd .\frontend\
 npm run dev
-make start
+make start1
