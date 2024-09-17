@@ -3,8 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/D0K-ich/types/utils/querier"
-	"net/http"
 )
 
 // App struct
@@ -30,9 +28,4 @@ func (a *App) Greet(name string) string {
 
 func (a *App) Hi(name string) string {
 	return fmt.Sprintf("Hichurka %s", name)
-}
-
-func (a *App) SendRequest(query *querier.SimpleQuery) (response *http.Response, err error) {
-	if response, err = querier.NewSimpleQuery(query); err != nil {return}
-	return
 }

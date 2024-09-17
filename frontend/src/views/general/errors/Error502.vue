@@ -2,12 +2,16 @@
 	<div style="width: 100%; height: 100vh; background-color: #211b36">
 		<v-row class="fill-height d-flex" no-gutters>
 			<v-col cols="6" class="d-flex align-center justify-center" style="min-height: 100%">
-				<div>Ошибка 502</div>
+				<div>ХМ, КАЖЕТСЯ НЕТ СОЕДИНЕНИЯ С СЕРВЕРОМ :(</div>
 			</v-col>
 
 
 			<v-col cols="6" class="d-flex align-center justify-center" style="min-height: 100%">
-				<div class="d-flex align-center justify-center">ЧТО-ТО РАБОТАЕТ НЕ ТАК, КАК НУЖНО</div>
+				<div class="d-flex align-center justify-center" style="border: 1px solid black; height: 1vh">
+					<div>ЧТО-ТО РАБОТАЕТ НЕ ТАК, КАК НУЖНО </div>
+					<br>
+					<div>НО ВАШИ ПОКОРНЫЕ СЛУГИ УЖЕ ЭТО ЧИНЯТ</div>
+				</div>
 			</v-col>
 
 			<server/>
