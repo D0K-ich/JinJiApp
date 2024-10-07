@@ -138,7 +138,6 @@ onMounted(() => {
 			nickname.value  = user_store.User.name
 			level.value     = user_store.User.level
 		})
-})
 
 </script>
 

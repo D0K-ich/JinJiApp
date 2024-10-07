@@ -5,6 +5,7 @@ proto-gen:
 	@echo "Building in developer mode..."
 	@echo "------------------------------------"
 	cd ./frontend/src/proto/auth &&	protoc -I=. auth.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
+	# npx webpack ./client.js --mode=production
 
 dev-build:
 	@echo "===================================="
