@@ -1,4 +1,5 @@
 <template>
+
 <!--	<preloader :percent_loaded=percent_loaded />-->
 <!--	<v-app class="main_styles" v-if="state_store.connection.Name == ConnectionStateName.Online">-->
 <!--		<router-view/>-->
