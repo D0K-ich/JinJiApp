@@ -8,13 +8,13 @@ stages:
   - back-deploy
 
 # Go pipeline
-go_install:
+back-install:
   stage: install
   image: golang:1.23
   script:
     - go mod download  # Загружаем зависимости
 
-go_test:
+back-test:
   stage: test
   image: golang:1.23
   script:
@@ -24,7 +24,7 @@ go_test:
     reports:
       junit: report.xml
 
-go_build:
+back-deploy:
   when: manual
   stage: build
   image: golang:1.23
@@ -35,13 +35,13 @@ go_build:
       - my_go_app
 
 # Node.js pipeline
-node_install:
+front-install:
   stage: install
   image: node:20
   script:
     - npm i  # Устанавливаем зависимости
 
-node_test:
+front-test:
   stage: test
   image: node:20
   script:
@@ -51,7 +51,7 @@ node_test:
     reports:
       junit: report.xml
 
-node_build:
+front-deploy:
   when: manual
   stage: build
   image: node:20
