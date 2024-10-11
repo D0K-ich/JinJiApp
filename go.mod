@@ -1,6 +1,6 @@
-module github.com/D0K-ich/JinJiApp
+module gitlab.com/D0K-ich/JinJiApp
 
-go 1.21.7
+go 1.23.2
 
 require (
 	github.com/D0K-ich/types v0.0.0-20240828132338-6213cea88a64

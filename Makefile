@@ -6,6 +6,7 @@ proto-gen:
 	@echo "------------------------------------"
 	cd ./frontend/src/proto/auth &&	protoc -I=. auth.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
 	# npx webpack ./client.js --mode=production
+#   	protoc -I=. auth.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
 
 dev-build:
 	@echo "===================================="

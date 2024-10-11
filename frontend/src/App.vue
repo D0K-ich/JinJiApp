@@ -1,5 +1,4 @@
 <template>
-
 <!--	<preloader :percent_loaded=percent_loaded />-->
 <!--	<v-app class="main_styles" v-if="state_store.connection.Name == ConnectionStateName.Online">-->
 <!--		<router-view/>-->
@@ -28,7 +27,6 @@ import {onMounted, ref} from "vue";
 import {StateStore} from "./store/state";
 import {ConnectionStateName} from "./store/events";
 import Error502 from "./views/general/errors/Error502.vue";
-import network from "./network/network";
 
 gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase);
 

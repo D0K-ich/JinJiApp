@@ -18,10 +18,16 @@ class Network {
         },
     })
 
+
     UserPost<T>(path : string, payload : Record<string, any>, timeout? : number) {
         const parts : string[] = path.split('/')
         return this.adminPost<T>('user', parts[0], parts.length > 1 ? parts[1] : '', payload, timeout)
     }
+
+    LoginGrpc(mail : string, password : string) {
+    }
+    ActivateGrpc(code : number, user_uuid : string) {}
+    RegisterGrpc(mail : string, password : string, nickname : string)      {}
 
     private setPostSpecFields(payload : Record<string, any>) : Record<string, any> {
         payload['_type']		= "request"
