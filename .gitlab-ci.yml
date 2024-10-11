@@ -1,11 +1,11 @@
 stages:
-  - front-install
-  - front-test
-  - front-deploy
-
   - back-install
   - back-test
   - back-deploy
+
+  - front-install
+  - front-test
+  - front-deploy
 
 # Go pipeline
 back-install:
@@ -39,12 +39,14 @@ front-install:
   stage: front-install
   image: node:20
   script:
+    - cd ./frontend
     - npm i  # Устанавливаем зависимости
 
 front-test:
   stage: front-test
   image: node:20
   script:
+    - cd ./frontend
     - npm run test  # Запускаем тесты
   artifacts:
     when: always
@@ -56,6 +58,7 @@ front-deploy:
   stage: front-deploy
   image: node:20
   script:
+    - cd ./frontend
     - npm run build  # Собираем приложение
   artifacts:
     paths:
