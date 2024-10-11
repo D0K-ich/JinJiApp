@@ -1,0 +1,62 @@
+stages:
+  - front-install
+  - front-test
+  - front-deploy
+
+  - back-install
+  - back-test
+  - back-deploy
+
+# Go pipeline
+go_install:
+  stage: install
+  image: golang:1.23
+  script:
+    - go mod download  # Загружаем зависимости
+
+go_test:
+  stage: test
+  image: golang:1.23
+  script:
+    - go test ./...    # Запускаем все тесты
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+
+go_build:
+  when: manual
+  stage: build
+  image: golang:1.23
+  script:
+    - go build -o my_go_app   # Собираем приложение
+  artifacts:
+    paths:
+      - my_go_app
+
+# Node.js pipeline
+node_install:
+  stage: install
+  image: node:20
+  script:
+    - npm i  # Устанавливаем зависимости
+
+node_test:
+  stage: test
+  image: node:20
+  script:
+    - npm run test  # Запускаем тесты
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+
+node_build:
+  when: manual
+  stage: build
+  image: node:20
+  script:
+    - npm run build  # Собираем приложение
+  artifacts:
+    paths:
+      - dist/
